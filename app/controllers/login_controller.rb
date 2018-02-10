@@ -6,7 +6,7 @@ class LoginController < ApplicationController
     user = User.find_by(username: username)
     if user != nil
       if password == user.password
-        response.status(:accepted)
+        response.status=(:accepted)
         jdata = {
           'password' => "password",
           'port' => "100"
@@ -32,7 +32,7 @@ class LoginController < ApplicationController
     end
     if test == nil
       User.create(username: username, password: password)
-      response.status(:created)
+      response.status=(:created)
       render plain: "Success!"
     end
   end
