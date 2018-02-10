@@ -16,8 +16,8 @@ class LoginController < ApplicationController
         head :forbidden
       end
     end
-  end
-  if user == nil
-    head :not_found
+    if user == nil
+      head :not_found
+    end
   end
 end
