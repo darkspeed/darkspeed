@@ -6,6 +6,7 @@ class LoginController < ApplicationController
     user = User.find_by(username: username)
     if user != nil
       if password == user.password
+        response.status(:accepted)
         jdata = {
           'password' => "password",
           'port' => "100"
