@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   match '/login' => 'login#login', via: :post
   match '/create_account' => 'login#create_account', via: :post
   match '/delete_user' => 'login#delete_user', via: :post
-  match '/reset_password' => 'login#reset_password'
+  match '/reset_password' => 'login#reset_password', via: :post
 end

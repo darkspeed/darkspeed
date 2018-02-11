@@ -32,13 +32,14 @@ class LoginController < ApplicationController
     data = JSON.parse(request.body.read)
     username = data['username']
     password = data['password']
+    email = data['email']
     test = User.find_by(username: username)
     if test != nil
       render plain: "Username taken"
       head :conflict
     end
     if test == nil
-      User.create(username: username, password: password)
+      User.create(username: username, password: password, email: email)
       response.status=(:created)
       render plain: "Success!"
     end
@@ -72,6 +73,6 @@ class LoginController < ApplicationController
     data = JSON.parse(request.body.read)
     email = data['email']
     user = User.find_by(email: email)
-    UserMailer.reset_password(email).deliver_now
+    UserMailer.reset(email).deliver_now
   end
 end
