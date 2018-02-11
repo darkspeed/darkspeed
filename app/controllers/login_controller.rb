@@ -3,14 +3,13 @@ class LoginController < ApplicationController
   def login
     # Parse request
     data = JSON.parse(request.body.read)
-    username = data['username']
+    login = data['login']
     password = data['password']
-    email = data['email']
 
     # Find the user
-    user = User.find_by(username: username)
+    user = User.find_by(username: login)
     unless user
-      user = User.find_by(email: email)
+      user = User.find_by(email: login)
     end
     unless user
       head :not_found
@@ -46,15 +45,15 @@ class LoginController < ApplicationController
   end
 
   def delete_user
+    # Parse request
     data = JSON.parse(request.body.read)
-    username = data['username']
+    login = data['login']
     password = data['password']
-    email = data['email']
 
     # Find the user
-    user = User.find_by(username: username)
+    user = User.find_by(username: login)
     unless user
-      user = User.find_by(email: email)
+      user = User.find_by(email: login)
     end
     unless user
       head :not_found
