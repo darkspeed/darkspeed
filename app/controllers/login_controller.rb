@@ -80,6 +80,6 @@ class LoginController < ApplicationController
     data = JSON.parse(request.body.read)
     email = data['email']
     user = User.find_by(email: email)
-    UserMailer.reset(email).deliver_now
+    UserMailer.reset(user).deliver_later
   end
 end

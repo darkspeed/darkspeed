@@ -1,0 +1,217 @@
+Started POST "/create_account" for 127.0.0.1 at 2018-02-11 14:24:25 -0500
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LoginController#create_account as */*
+  Parameters: {"{\"username\": \"lukecrum\", \"email\": \"lukecrum20@gmail.com\", \"password\": \"1234\"}"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'lukecrum' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lukecrum20@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password`, `created_at`, `updated_at`, `email`) VALUES ('lukecrum', '1234', '2018-02-11 19:24:25', '2018-02-11 19:24:25', 'lukecrum20@gmail.com')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 201 Created in 27ms (Views: 4.1ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/reset_password" for 127.0.0.1 at 2018-02-11 14:24:34 -0500
+Processing by LoginController#reset_password as */*
+  Parameters: {"{\"username\": \"lukecrum\", \"email\": \"lukecrum20@gmail.com\", \"password\": \"1234\"}"=>"[FILTERED]"}
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lukecrum20@gmail.com' LIMIT 1[0m
+UserMailer#reset: processed outbound mail in 20.2ms
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/reset with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:4:in `reset'
+app/controllers/login_controller.rb:83:in `reset_password'
+Started POST "/create_account" for 127.0.0.1 at 2018-02-11 14:28:42 -0500
+Processing by LoginController#create_account as */*
+  Parameters: {"{\"username\": \"aaronsutton\", \"email\": \"aaronjsutton@icloud.com\", \"password\": \"nohashpass\"}"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'aaronsutton' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aaronjsutton@icloud.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password`, `created_at`, `updated_at`, `email`) VALUES ('aaronsutton', 'nohashpass', '2018-02-11 19:28:42', '2018-02-11 19:28:42', 'aaronjsutton@icloud.com')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 201 Created in 8ms (Views: 0.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/reset_password" for 127.0.0.1 at 2018-02-11 14:31:15 -0500
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by LoginController#reset_password as */*
+  Parameters: {"{\"email\": aaronjsutton@icloud.com\"}"=>nil}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+JSON::ParserError (743: unexpected token at '{"email": aaronjsutton@icloud.com"}'):
+  
+app/controllers/login_controller.rb:80:in `reset_password'
+Started POST "/reset_password" for 127.0.0.1 at 2018-02-11 14:31:28 -0500
+Processing by LoginController#reset_password as */*
+  Parameters: {"{\"email\": \"aaronjsutton@icloud.com\"}"=>nil}
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aaronjsutton@icloud.com' LIMIT 1[0m
+  Rendering user_mailer/reset.html.erb within layouts/mailer
+  Rendered user_mailer/reset.html.erb within layouts/mailer (5.8ms)
+UserMailer#reset: processed outbound mail in 32.8ms
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User:0x007fa95b8716b0>):
+     5:     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+     6:   </head>
+     7:   <body>
+     8:     <h1>Reset password for user, <%= @user.name %></h1>
+     9:   </body>
+    10: </html>
+  
+app/views/user_mailer/reset.html.erb:8:in `_app_views_user_mailer_reset_html_erb__1195946225179795195_70182644845400'
+app/mailers/user_mailer.rb:4:in `reset'
+app/controllers/login_controller.rb:83:in `reset_password'
+Started POST "/reset_password" for 127.0.0.1 at 2018-02-11 14:31:50 -0500
+Processing by LoginController#reset_password as */*
+  Parameters: {"{\"email\": \"aaronjsutton@icloud.com\"}"=>nil}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aaronjsutton@icloud.com' LIMIT 1[0m
+  Rendering user_mailer/reset.html.erb within layouts/mailer
+  Rendered user_mailer/reset.html.erb within layouts/mailer (0.4ms)
+  Rendering user_mailer/reset.text.erb within layouts/mailer
+  Rendered user_mailer/reset.text.erb within layouts/mailer (0.3ms)
+UserMailer#reset: processed outbound mail in 284.9ms
+Sent mail to aaronjsutton@icloud.com (11.8ms)
+Date: Sun, 11 Feb 2018 14:31:51 -0500
+From: from@example.com
+To: aaronjsutton@icloud.com
+Message-ID: <5a809a2744d68_c9c63fd4aba6bebc69750@Spectre.local.mail>
+Subject: DarkSpeed Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a809a2742dc1_c9c63fd4aba6bebc69623";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a809a2742dc1_c9c63fd4aba6bebc69623
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Reset password for, aaronsutton
+===============================================
+
+
+----==_mimepart_5a809a2742dc1_c9c63fd4aba6bebc69623
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Reset password for user, aaronsutton</h1>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_5a809a2742dc1_c9c63fd4aba6bebc69623--
+
+No template found for LoginController#reset_password, rendering head :no_content
+Completed 204 No Content in 395ms (ActiveRecord: 0.6ms)
+
+
+Started POST "/reset_password" for 127.0.0.1 at 2018-02-11 14:36:35 -0500
+Processing by LoginController#reset_password as */*
+  Parameters: {"{\"email\": \"aaronjsutton@icloud.com\"}"=>nil}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aaronjsutton@icloud.com' LIMIT 1[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 0d44fd6c-525d-4add-b9de-62f3eb179e38) to Async(mailers) with arguments: "UserMailer", "reset", "deliver_now", #<GlobalID:0x007fa958cce3f0 @uri=#<URI::GID gid://darkspeed/User/4>>
+No template found for LoginController#reset_password, rendering head :no_content
+Completed 204 No Content in 143ms (ActiveRecord: 1.6ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+[ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38] Performing ActionMailer::DeliveryJob (Job ID: 0d44fd6c-525d-4add-b9de-62f3eb179e38) from Async(mailers) with arguments: "UserMailer", "reset", "deliver_now", #<GlobalID:0x007fa958bccfb0 @uri=#<URI::GID gid://darkspeed/User/4>>
+[ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38]   Rendering user_mailer/reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38]   Rendered user_mailer/reset.html.erb within layouts/mailer (0.6ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38]   Rendering user_mailer/reset.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38]   Rendered user_mailer/reset.text.erb within layouts/mailer (0.3ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38] UserMailer#reset: processed outbound mail in 73.2ms
+[ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38] Sent mail to aaronjsutton@icloud.com (4.0ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38] Date: Sun, 11 Feb 2018 14:36:46 -0500
+From: from@example.com
+To: aaronjsutton@icloud.com
+Message-ID: <5a809b4e12a21_c9c63fd4ac667090699b7@Spectre.local.mail>
+Subject: DarkSpeed Password Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a809b4e11d5c_c9c63fd4ac66709069874";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a809b4e11d5c_c9c63fd4ac66709069874
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Reset password for, aaronsutton
+===============================================
+
+
+----==_mimepart_5a809b4e11d5c_c9c63fd4ac66709069874
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Reset password for user, aaronsutton</h1>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_5a809b4e11d5c_c9c63fd4ac66709069874--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38] Performed ActionMailer::DeliveryJob (Job ID: 0d44fd6c-525d-4add-b9de-62f3eb179e38) from Async(mailers) in 121.32ms
