@@ -44,6 +44,7 @@ class LoginController < ApplicationController
     password = data['password']
     user = User.find_by(username: username)
     if user.password == password
+      render plain: "User deleted!"
       user.destroy
     end
     if user.password != password
