@@ -31,11 +31,17 @@ class LoginController < ApplicationController
   def create_account
     data = JSON.parse(request.body.read)
     username = data['username']
+    email = data['email']
     password = data['password']
     email = data['email']
     test = User.find_by(username: username)
     if test != nil
       render plain: "Username taken"
+      head :conflict
+    end
+    test = User.find_by(email: email)
+    if test != nil
+      render plain: "Email in use"
       head :conflict
     end
     if test == nil
@@ -58,6 +64,7 @@ class LoginController < ApplicationController
     end
     unless user
       head :not_found
+      return
     end
     if user.password == password
       render plain: "User deleted!"
