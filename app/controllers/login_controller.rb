@@ -67,4 +67,11 @@ class LoginController < ApplicationController
       head :forbidden
     end
   end
+
+  def reset_password
+    data = JSON.parse(request.body.read)
+    email = data['email']
+    user = User.find_by(email: email)
+    UserMailer.reset_password(email).deliver_now
+  end
 end
