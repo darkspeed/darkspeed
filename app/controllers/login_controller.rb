@@ -1,25 +1,31 @@
 class LoginController < ApplicationController
+
   def login
+    # Parse request
     data = JSON.parse(request.body.read)
     username = data['username']
     password = data['password']
+    email = data['email']
+
+    # Find the user
     user = User.find_by(username: username)
-    if user != nil
-      if password == user.password
-        response.status=(:accepted)
-        jdata = {
-          'password' => "password",
-          'port' => "100"
-        }
-        render json: jdata
-      end
-      if password != user.password
-        render plain: "Incorrect password!"
-        head :forbidden
-      end
+    unless user
+      user = User.find_by(email: email)
     end
-    if user == nil
+    unless user
       head :not_found
+    end
+
+    # Check password
+    if password == user.password
+      response.status=(:accepted)
+      jdata = {
+        'password' => "password",
+        'port' => "100"
+      }
+      render json: jdata
+    else
+      head :forbidden
     end
   end
 
@@ -38,6 +44,7 @@ class LoginController < ApplicationController
       render plain: "Success!"
     end
   end
+
   def delete_user
     data = JSON.parse(request.body.read)
     username = data['username']
