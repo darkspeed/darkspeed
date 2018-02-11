@@ -49,7 +49,16 @@ class LoginController < ApplicationController
     data = JSON.parse(request.body.read)
     username = data['username']
     password = data['password']
+    email = data['email']
+
+    # Find the user
     user = User.find_by(username: username)
+    unless user
+      user = User.find_by(email: email)
+    end
+    unless user
+      head :not_found
+    end
     if user.password == password
       render plain: "User deleted!"
       user.destroy
