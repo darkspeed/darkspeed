@@ -1,0 +1,7 @@
+{
+  "address": "localhost",
+  "log_file": "log/passenger.log",
+  "ssl": true,
+  "ssl_certificate": "cert/localhost.pem",
+  "ssl_certificate_key": "cert/localhost.key",
+}
