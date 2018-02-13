@@ -215,3 +215,191 @@ Content-Transfer-Encoding: 7bit
 ----==_mimepart_5a809b4e11d5c_c9c63fd4ac66709069874--
 
 [ActiveJob] [ActionMailer::DeliveryJob] [0d44fd6c-525d-4add-b9de-62f3eb179e38] Performed ActionMailer::DeliveryJob (Job ID: 0d44fd6c-525d-4add-b9de-62f3eb179e38) from Async(mailers) in 121.32ms
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 09:15:20 -0500
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 19ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 09:23:46 -0500
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 20ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 09:24:21 -0500
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 19ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 09:24:40 -0500
+  [1m[35m (0.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 21ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 09:27:32 -0500
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (11.6ms)
+Completed 200 OK in 27ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 09:29:06 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (7.7ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create_account" for 127.0.0.1 at 2018-02-12 09:36:00 -0500
+Processing by LoginController#create_account as */*
+  Parameters: {"{\"username\": \"lukecrum\", \"email\": \"lukecrum20@gmail.com\", \"password\": \"1234\"}"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'lukecrum' LIMIT 1[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lukecrum20@gmail.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 21ms (Views: 1.5ms | ActiveRecord: 1.6ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/login_controller.rb:44:in `create_account'
+Started GET "/" for 127.0.0.1 at 2018-02-12 11:56:07 -0500
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 13:04:35 -0500
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 13:04:47 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 13:05:58 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 13:45:11 -0500
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 19ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 13:46:48 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-02-12 13:48:20 -0500
+Processing by LoginController#login as */*
+  Parameters: {"{\"login\": \"lukecrum20@gmail.com\", \"password\": \"1234\"}"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'lukecrum20@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lukecrum20@gmail.com' LIMIT 1[0m
+Completed 202 Accepted in 16ms (Views: 0.7ms | ActiveRecord: 2.3ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 13:50:20 -0500
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 19ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 13:50:22 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 13:50:49 -0500
+  [1m[35m (0.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 13:51:09 -0500
+  [1m[35m (0.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 24ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 13:52:09 -0500
+  [1m[35m (0.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 17ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 13:53:05 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2018-02-12 13:54:00 -0500
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 23ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-12 13:54:03 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aaronsutton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
