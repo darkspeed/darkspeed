@@ -36,27 +36,29 @@ class LoginController < ApplicationController
     email = data['email']
     password = data['password']
 
-    unless User.find_by(username: username)
+    unless username && email && password
+      head :bad_request
+    end
+
+    if User.find_by(username: username)
       render plain: "Username taken"
       head :conflict
       return
     end
 
-    unless User.find_by(email: email)
+    if User.find_by(email: email)
       render plain: "Email in use"
       head :conflict
       return
     end
 
-    new_user = new User
+    new_user = User.new
     new_user.username = username
     new_user.email = email
     new_user.password = password
     new_user.save!
 
     head :created
-  rescue
-    head :bad_request
   end
 
   def delete_user
