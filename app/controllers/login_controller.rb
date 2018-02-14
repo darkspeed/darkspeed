@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class LoginController < ApplicationController
 
   def login
@@ -33,22 +35,28 @@ class LoginController < ApplicationController
     username = data['username']
     email = data['email']
     password = data['password']
-    email = data['email']
-    test = User.find_by(username: username)
-    if test != nil
+
+    unless User.find_by(username: username)
       render plain: "Username taken"
       head :conflict
+      return
     end
-    test = User.find_by(email: email)
-    if test != nil
+
+    unless User.find_by(email: email)
       render plain: "Email in use"
       head :conflict
+      return
     end
-    if test == nil
-      User.create(username: username, password: password, email: email)
-      response.status=(:created)
-      render plain: "Success!"
-    end
+
+    new_user = new User
+    new_user.username = username
+    new_user.email = email
+    new_user.password = password
+    new_user.save!
+
+    head :created
+  rescue
+    head :bad_request
   end
 
   def delete_user
