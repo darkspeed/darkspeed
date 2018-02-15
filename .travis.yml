@@ -1,0 +1,18 @@
+language: ruby
+
+rvm: 2.5.0
+
+services:
+  - mysql
+
+install:
+  - bundle install --jobs=3 --retry=3
+  - bundle exec rake db:create
+  - bundle exec rake db:schema:load
+
+script:
+  - bundle exec rake
+
+notifications:
+  email:
+    - ajsutton.dev@gmail.com
