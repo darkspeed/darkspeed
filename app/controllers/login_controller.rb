@@ -7,50 +7,49 @@ class LoginController < ApplicationController
     data = JSON.parse request.body.read, symbolize_names: true
     login = data[:login]
     password = data[:password]
-    puts "RECV LOGIN #{login}"
 
     # Find the user
     user = User.find_by(username: login)
     user ||= User.find_by(email: login)
 
+    # User not found
     unless user
       head :not_found
       return
     end
 
+    # Password does not match
     unless user.authenticate password
       head :forbidden
       return
     end
 
     head :accepted
+
+    # TODO: Method call to get server config from ds-server gem
+    # Send config to client
+
   end
 
   # Refactor?
   def create_account
+    # Parse request
     data = JSON.parse request.body.read, symbolize_names: true
     username = data[:username]
     email = data[:emai]
     password = data[:password]
+    password_confirmation = data[:password_confirmation]
 
-    if User.find_by(username: username)
-      head :conflict
-      return
-    end
-
-    if User.find_by(email: email)
-      head :conflict
-      return
-    end
-
-    new_user = User.new
-    new_user.username = username
-    new_user.email = email
+    # Create the new user
+    new_user = User.new username: username, email: email
     new_user.password = password
-    new_user.password_confirmation = password
+    new_user.password_confirmation = password_confirmation
 
+    # Save the user to the database
     unless new_user.save
-      head :bad_request
+      response.status = :bad_request
+      render json: new_user.errors.as_json
+      return
     end
 
     head :created
