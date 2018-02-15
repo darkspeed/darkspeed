@@ -4,50 +4,41 @@ class LoginController < ApplicationController
 
   def login
     # Parse request
-    data = JSON.parse(request.body.read)
-    login = data['login']
-    password = data['password']
+    data = JSON.parse request.body.read, symbolize_names: true
+    login = data[:login]
+    password = data[:password]
+    puts "RECV LOGIN #{login}"
 
     # Find the user
     user = User.find_by(username: login)
-    unless user
-      user = User.find_by(email: login)
-    end
+    user ||= User.find_by(email: login)
+
     unless user
       head :not_found
+      return
     end
 
-    # Check password
-    if password == user.password
-      response.status=(:accepted)
-      jdata = {
-        'password' => "password",
-        'port' => "100"
-      }
-      render json: jdata
-    else
+    unless user.authenticate password
       head :forbidden
+      return
     end
+
+    head :accepted
   end
 
+  # Refactor?
   def create_account
-    data = JSON.parse(request.body.read)
-    username = data['username']
-    email = data['email']
-    password = data['password']
-
-    unless username && email && password
-      head :bad_request
-    end
+    data = JSON.parse request.body.read, symbolize_names: true
+    username = data[:username]
+    email = data[:emai]
+    password = data[:password]
 
     if User.find_by(username: username)
-      render plain: "Username taken"
       head :conflict
       return
     end
 
     if User.find_by(email: email)
-      render plain: "Email in use"
       head :conflict
       return
     end
@@ -56,7 +47,11 @@ class LoginController < ApplicationController
     new_user.username = username
     new_user.email = email
     new_user.password = password
-    new_user.save!
+    new_user.password_confirmation = password
+
+    unless new_user.save
+      head :bad_request
+    end
 
     head :created
   end
