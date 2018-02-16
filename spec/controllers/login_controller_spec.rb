@@ -3,7 +3,6 @@ include Faker
 
 RSpec.describe LoginController, type: :controller do
   describe "user creation: " do
-
     before :each do
       @user = Fabricate.build(:user)
       @user_data = {
@@ -55,11 +54,9 @@ RSpec.describe LoginController, type: :controller do
     after :all do
       Fallout.unique.clear
     end
-
   end
 
   describe "authentication: " do
-
     before :each do
       @password = Internet.password
       @user = Fabricate(:user, password: @password, password_confirmation: @password)
