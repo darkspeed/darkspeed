@@ -4221,3 +4221,486 @@ Completed 403 Forbidden in 3ms (ActiveRecord: 0.5ms)
   [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 281[0m
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"maxon.elder", "email"=>"elder.maxon@bernhardsatterfield.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"maxon.elder", "email"=>"elder.maxon@bernhardsatterfield.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'maxon.elder' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('maxon.elder', '$2a$04$Hdtbyiuc7ieSgS6qbY/CvuHLTJ9NOb1Dy.y3W2NMTA2uMrTbB5ZAq', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'elder.maxon@bernhardsatterfield.co')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 6ms (ActiveRecord: 0.8ms)
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"porter.gage", "email"=>"porter.gage@willms.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"porter.gage", "email"=>"porter.gage@willms.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'porter.gage' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('porter.gage', '$2a$04$4g2i8DNSOXjsJMbDjRJsduCrW9YSY4apgu0QAajThwxPB9JJfzY86', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'porter.gage@willms.com')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (ActiveRecord: 1.0ms)
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"porter.gage", "email"=>"porter.gage@willms.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"porter.gage", "email"=>"porter.gage@willms.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'porter.gage' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"gage_porter", "email"=>"gage_porter@parisianweimann.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"gage_porter", "email"=>"gage_porter@parisianweimann.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'gage_porter' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 6ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"porter_gage", "email"=>"porter_gage@rohan.io", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"porter_gage", "email"=>"porter_gage@rohan.io", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'porter_gage' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'gage.porter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('gage.porter', '$2a$04$1qmGA2Qgjrf/rmdnGjaPMOsj7jX/VumfFsS./dLqF0HmOkDQ2e3sW', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'porter.gage@yundt.net')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"gage.porter", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'gage.porter' LIMIT 1[0m
+Completed 202 Accepted in 5ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'gage_porter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('gage_porter', '$2a$04$fmlFweS8Zk8CCZ.EALfhO.1KLbU1avbnHOnkctAwkNJcNLk6dULpa', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'gage_porter@macejkovic.name')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"gage_porter@macejkovic.name", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'gage_porter@macejkovic.name' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'gage_porter@macejkovic.name' LIMIT 1[0m
+Completed 202 Accepted in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'gage.porter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('gage.porter', '$2a$04$GUHXDTefGZcx8e3GhP2AruoA2.tUWU9PcaQNB41TjAivgWza9EsbO', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'gage_porter@westmoore.io')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"not@valid.mail", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'not@valid.mail' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'not@valid.mail' LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'gage.porter' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('gage.porter', '$2a$04$Vn93bB7rj52Cg7Rw7QuCMe1M4SN0EtI4KDVX.9L5mVuEg.YyvEWQW', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'gage.porter@gutkowskijohns.org')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"anonymous", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'anonymous' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'anonymous' LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'porter.gage' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('porter.gage', '$2a$04$shBfr5ltN3bQqUQcpVJs.eQ9kP1oyQus3ifizaRWKGl0Xe.okFC/K', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'porter_gage@hartmann.net')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"porter_gage@hartmann.net", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'porter_gage@hartmann.net' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'porter_gage@hartmann.net' LIMIT 1[0m
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'gage.porter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('gage.porter', '$2a$04$um7u/pIBpybfGES/EJ5mv.aMqr6WxNXa1DLhoXBjMUm4OTtrseuw2', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'gage.porter@cronaweinat.biz')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#delete as JSON
+  Parameters: {"login"=>"gage.porter@cronaweinat.biz", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'gage.porter@cronaweinat.biz' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'gage.porter@cronaweinat.biz' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 289[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'gage_porter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('gage_porter', '$2a$04$Hmc/drym.8FpbbGN1nRbY.2UilnUkf7aEuVDFhq5QIcculeBKb2eG', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'gage.porter@corwinnienow.co')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#delete as JSON
+  Parameters: {"login"=>"mc_hammer", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'mc_hammer' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'mc_hammer' LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'porter.gage' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('porter.gage', '$2a$04$5MBh9JeIV/Q0x2eSFbpe5ubsXPfPfa9GSu9Fi4DysMsbiv.OegPny', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'porter.gage@schuster.biz')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#delete as JSON
+  Parameters: {"login"=>"porter.gage@schuster.biz", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'porter.gage@schuster.biz' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'porter.gage@schuster.biz' LIMIT 1[0m
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'gage_porter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('gage_porter', '$2a$04$YlzQa6OKKzllpYXTNC2j7eAuRtIc0h9L5wfZhX9ph.dyj0f/MseD2', '2018-02-16 01:09:03', '2018-02-16 01:09:03', 'porter.gage@weimannwunsch.name')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'gage_porter' AND (`users`.`id` != 292) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'gage_porter' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'porter.gage@weimannwunsch.name' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 292[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+--------------------------
+LoginTest: test_user_login
+--------------------------
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:01 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"88_x6", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 13ms (ActiveRecord: 0.3ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:01 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"maxon.elder", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:01 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"elder.maxon", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:01 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"elder_maxon", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:01 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"elder.maxon", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:01 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"elder.maxon", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:01 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"elder.maxon", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:02 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"maxon_elder", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:02 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"elder.maxon", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:02 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"elder.maxon", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:02 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"maxon_elder", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:02 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"elder_maxon", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 4ms (ActiveRecord: 0.5ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:33:02 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"elder_maxon", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 3ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:34:34 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"ann.leslie.bishop", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 16ms (ActiveRecord: 0.3ms)
+--------------------------
+LoginTest: test_user_login
+--------------------------
+Started POST "/login" for 127.0.0.1 at 2018-02-15 20:34:34 -0500
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"dima", "password"=>"[FILTERED]"}
+Completed 202 Accepted in 10ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"sulik", "email"=>"sulik@krajcik.biz", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"sulik", "email"=>"sulik@krajcik.biz", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'sulik' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('sulik', '$2a$04$o.pKwTT9Z/bErDmZJDQgkuR2FcVUoF8qiBD7errgxyQ7Nh3BRGH6.', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'sulik@krajcik.biz')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 6ms (ActiveRecord: 0.8ms)
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"three.dog", "email"=>"dog.three@christiansen.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"three.dog", "email"=>"dog.three@christiansen.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'three.dog' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('three.dog', '$2a$04$2y2tEy4Eib9kpKDZrG9/Euoc0UpkdK6M.MI.saESqFVkx1jA0pKQG', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'dog.three@christiansen.name')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 4ms (ActiveRecord: 0.9ms)
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"three.dog", "email"=>"dog.three@christiansen.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"three.dog", "email"=>"dog.three@christiansen.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'three.dog' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"dog.three", "email"=>"three.dog@hamillmoen.io", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"dog.three", "email"=>"three.dog@hamillmoen.io", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'dog.three' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"three_dog", "email"=>"three.dog@medhurst.biz", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"three_dog", "email"=>"three.dog@medhurst.biz", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'three_dog' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'dog_three' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('dog_three', '$2a$04$3aqslUhZL0bf27/KpcMehe/F/.vVnWpDowJXxILh.eAisEJylWXcq', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'three_dog@volkman.io')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"dog_three", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'dog_three' LIMIT 1[0m
+Completed 202 Accepted in 6ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'three.dog' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('three.dog', '$2a$04$3Ya9jrwlAPTfZVcYeUrbXO7nbJreGnlqEx0ZE5I9TZbCSueA/T4g.', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'three.dog@ryan.co')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"three.dog@ryan.co", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'three.dog@ryan.co' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'three.dog@ryan.co' LIMIT 1[0m
+Completed 202 Accepted in 4ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'three_dog' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('three_dog', '$2a$04$63Yr5eec4dv2KEaiXPgEbuVbw9sKj7x4cEm/tJWT.lYN37hRVZY.C', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'three_dog@keelingsauer.net')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"not@valid.mail", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'not@valid.mail' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'not@valid.mail' LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'three.dog' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('three.dog', '$2a$04$oAPn08bj2Fpal7F6uY3VBO9/LZb/3XWRJUZEk6R9xf9lYRFqW2IYS', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'three_dog@robel.info')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"anonymous", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'anonymous' LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'anonymous' LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'dog.three' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('dog.three', '$2a$04$dGClpTNDraxV38AIbu1M9.3Ga3avQOc16j2LLApiWeCdLFhYQn.HW', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'dog_three@kautzer.info')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"dog_three@kautzer.info", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'dog_three@kautzer.info' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'dog_three@kautzer.info' LIMIT 1[0m
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'three_dog' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('three_dog', '$2a$04$oEnZmKtSdJZ/fCI1oJ8dzORrtfdv3KPkoxEpUVmITv462Exb05bai', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'dog_three@hermistonabbott.biz')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#delete as JSON
+  Parameters: {"login"=>"dog_three@hermistonabbott.biz", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'dog_three@hermistonabbott.biz' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'dog_three@hermistonabbott.biz' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 328[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'dog_three' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('dog_three', '$2a$04$bmXeSWuHyunFjAlBHsvT0OdYEzosUmlNujJn0wu6Wieg5nGNGBfri', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'dog.three@walter.io')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#delete as JSON
+  Parameters: {"login"=>"mc_hammer", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'mc_hammer' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'mc_hammer' LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'dog_three' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('dog_three', '$2a$04$GVSss2crE7jB1usaR0Jn4O/wv4.U27gCiUdliI2rBP7P.44EEBRBK', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'three_dog@volkman.co')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#delete as JSON
+  Parameters: {"login"=>"three_dog@volkman.co", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'three_dog@volkman.co' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'three_dog@volkman.co' LIMIT 1[0m
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'three.dog' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('three.dog', '$2a$04$pw/3Ec31Cbs.NjFxqVPL9eid2rFnI6lTsiYmRg5s9LfmPzHlRBZjy', '2018-02-16 01:35:32', '2018-02-16 01:35:32', 'dog.three@klingbrakus.info')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'three.dog' AND (`users`.`id` != 331) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'three.dog' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'dog.three@klingbrakus.info' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 331[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
