@@ -2,6 +2,12 @@ require 'bcrypt'
 
 class LoginController < ApplicationController
 
+  def find_user_by(login)
+    user = User.find_by(username: login)
+    user ||= User.find_by(email: login)
+    return user || nil
+  end
+
   def login
     # Parse request
     data = JSON.parse request.body.read, symbolize_names: true
@@ -9,10 +15,7 @@ class LoginController < ApplicationController
     password = data[:password]
 
     # Find the user
-    user = User.find_by(username: login)
-    user ||= User.find_by(email: login)
-
-    # User not found
+    user = find_user_by login
     unless user
       head :not_found
       return
@@ -26,24 +29,20 @@ class LoginController < ApplicationController
 
     head :accepted
 
-    # TODO: Method call to get server config from ds-server gem
+    # TODO: Method call to get server config from config file
     # Send config to client
 
   end
 
   # Refactor?
-  def create_account
+  def create
     # Parse request
     data = JSON.parse request.body.read, symbolize_names: true
-    username = data[:username]
-    email = data[:emai]
-    password = data[:password]
-    password_confirmation = data[:password_confirmation]
 
     # Create the new user
-    new_user = User.new username: username, email: email
-    new_user.password = password
-    new_user.password_confirmation = password_confirmation
+    new_user = User.new username: data[:username], email: data[:email]
+    new_user.password = data[:password]
+    new_user.password_confirmation = data[:password_confirmation]
 
     # Save the user to the database
     unless new_user.save
@@ -55,35 +54,37 @@ class LoginController < ApplicationController
     head :created
   end
 
-  def delete_user
+  def delete
     # Parse request
-    data = JSON.parse(request.body.read)
-    login = data['login']
-    password = data['password']
+    data = JSON.parse request.body.read, symbolize_names: true
+    login = data[:login]
+    password = data[:password]
 
     # Find the user
-    user = User.find_by(username: login)
-    unless user
-      user = User.find_by(email: login)
-    end
+    user = find_user_by login
     unless user
       head :not_found
       return
     end
-    if user.password == password
-      render plain: "User deleted!"
-      user.destroy
-    end
-    if user.password != password
-      render plain: "Incorrect Password!"
+
+    # Authenticate
+    unless user.authenticate password
       head :forbidden
+      return
     end
+
+    # Delete the user
+    unless user.destroy
+      head :internal_server_error
+      return
+    end
+
+    head :ok
   end
 
+  # TODO: Refactor, SendGrid, and spec.
   def reset_password
-    data = JSON.parse(request.body.read)
-    email = data['email']
-    user = User.find_by(email: email)
-    UserMailer.reset(user).deliver_now
+
   end
+
 end

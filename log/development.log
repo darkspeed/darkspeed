@@ -1,7 +1,7 @@
-Started POST "/create_account" for 127.0.0.1 at 2018-02-11 14:24:25 -0500
+Started POST "/create" for 127.0.0.1 at 2018-02-11 14:24:25 -0500
   [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
-Processing by LoginController#create_account as */*
+Processing by LoginController#create as */*
   Parameters: {"{\"username\": \"lukecrum\", \"email\": \"lukecrum20@gmail.com\", \"password\": \"1234\"}"=>"[FILTERED]"}
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'lukecrum' LIMIT 1[0m
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'lukecrum20@gmail.com' LIMIT 1[0m
@@ -29,8 +29,8 @@ ActionView::MissingTemplate (Missing template user_mailer/reset with "mailer". S
   
 app/mailers/user_mailer.rb:4:in `reset'
 app/controllers/login_controller.rb:83:in `reset_password'
-Started POST "/create_account" for 127.0.0.1 at 2018-02-11 14:28:42 -0500
-Processing by LoginController#create_account as */*
+Started POST "/create" for 127.0.0.1 at 2018-02-11 14:28:42 -0500
+Processing by LoginController#create as */*
   Parameters: {"{\"username\": \"aaronsutton\", \"email\": \"aaronjsutton@icloud.com\", \"password\": \"nohashpass\"}"=>"[FILTERED]"}
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'aaronsutton' LIMIT 1[0m
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aaronjsutton@icloud.com' LIMIT 1[0m
@@ -267,8 +267,8 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.0ms)
 
 
-Started POST "/create_account" for 127.0.0.1 at 2018-02-12 09:36:00 -0500
-Processing by LoginController#create_account as */*
+Started POST "/create" for 127.0.0.1 at 2018-02-12 09:36:00 -0500
+Processing by LoginController#create as */*
   Parameters: {"{\"username\": \"lukecrum\", \"email\": \"lukecrum20@gmail.com\", \"password\": \"1234\"}"=>"[FILTERED]"}
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'lukecrum' LIMIT 1[0m
   Rendering text template
@@ -280,7 +280,7 @@ Completed 500 Internal Server Error in 21ms (Views: 1.5ms | ActiveRecord: 1.6ms)
   
 AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
   
-app/controllers/login_controller.rb:44:in `create_account'
+app/controllers/login_controller.rb:44:in `create'
 Started GET "/" for 127.0.0.1 at 2018-02-12 11:56:07 -0500
   [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
