@@ -63,27 +63,27 @@ RSpec.describe LoginController, type: :controller do
     end
 
     it "logs in a user by username" do
-      post :login, as: :json, params: {login: @user[:username], password: @password}
+      post :login, as: :json, params: { login: @user[:username], password: @password }
       assert_response :accepted
     end
 
     it "logs in a user by email" do
-      post :login, as: :json, params: {login: @user[:email], password: @password}
+      post :login, as: :json, params: { login: @user[:email], password: @password }
       assert_response :accepted
     end
 
     it "rejects an email that does not exist" do
-      post :login, as: :json, params: {login: "not@valid.mail", password: @password}
+      post :login, as: :json, params: { login: "not@valid.mail", password: @password }
       assert_response :not_found
     end
 
     it "rejects a username that does not exist" do
-      post :login, as: :json, params: {login: "anonymous", password: @password}
+      post :login, as: :json, params: { login: "anonymous", password: @password }
       assert_response :not_found
     end
 
     it "rejects an incorrect password" do
-      post :login, as: :json, params: {login: @user[:email], password: "falsey"}
+      post :login, as: :json, params: { login: @user[:email], password: "falsey" }
       assert_response :forbidden
     end
   end
@@ -95,17 +95,17 @@ RSpec.describe LoginController, type: :controller do
     end
 
     it "deletes a user" do
-      post :delete, as: :json, params: {login: @user[:email], password: @password}
+      post :delete, as: :json, params: { login: @user[:email], password: @password }
       assert_response :ok
     end
 
     it "rejects a user that does not exist" do
-      post :delete, as: :json, params: {login: "mc_hammer", password: @password}
+      post :delete, as: :json, params: { login: "mc_hammer", password: @password }
       assert_response :not_found
     end
 
     it "rejects an incorrect password" do
-      post :delete, as: :json, params: {login: @user[:email], password: "cant_touch_this"}
+      post :delete, as: :json, params: { login: @user[:email], password: "cant_touch_this" }
       assert_response :forbidden
     end
   end
