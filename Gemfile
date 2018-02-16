@@ -41,6 +41,7 @@ group :development, :test do
   gem 'fabrication'
   gem 'faker'
   gem 'brakeman', :require => false
+  gem 'rubocop', require: false
 end
 
 gem 'passenger'
