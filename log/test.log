@@ -4996,3 +4996,149 @@ Completed 403 Forbidden in 3ms (ActiveRecord: 0.5ms)
   [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 353[0m
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"ann_leslie_bishop", "email"=>"ann_bishop_leslie@witting.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"ann_leslie_bishop", "email"=>"ann_bishop_leslie@witting.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'ann_leslie_bishop' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('ann_leslie_bishop', '$2a$04$wov0mdDyLVHAiZmSCOXz0ekNRN9ErXhY6/HkrfMT7dexGq5MovebW', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'ann_bishop_leslie@witting.net')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 7ms (ActiveRecord: 1.0ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"codsworth", "email"=>"codsworth@roobluettgen.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"codsworth", "email"=>"codsworth@roobluettgen.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$me8IAFdb8i5z6lgjcF1.PeY14FeOkjCodQUVCfwjJh3W0f26fOZNe', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@roobluettgen.name')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (ActiveRecord: 0.8ms)
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"codsworth", "email"=>"codsworth@roobluettgen.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"codsworth", "email"=>"codsworth@roobluettgen.name", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"codsworth", "email"=>"codsworth@cummeratafay.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"codsworth", "email"=>"codsworth@cummeratafay.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 8ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by LoginController#create as JSON
+  Parameters: {"username"=>"codsworth", "email"=>"codsworth@jaskolski.io", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "login"=>{"username"=>"codsworth", "email"=>"codsworth@jaskolski.io", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$3Uc0erVMdAm7.GhV3Ba9s.Tu8sZ/IIRUlc7VPOKfJzP3iAcG2bD3G', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@dickiwehner.co')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"codsworth", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'codsworth' LIMIT 1[0m
+Completed 202 Accepted in 6ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$j2VNWqUrEnOtT4QtfnmYLumIdZSQXd83kDPmv5OHfLwQy9l4vrSOi', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@torpcruickshank.info')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"codsworth@torpcruickshank.info", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'codsworth@torpcruickshank.info' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'codsworth@torpcruickshank.info' LIMIT 1[0m
+Completed 202 Accepted in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$n0X2GWkESSJ7HXCxLv6Cmu8yNQm7h9eLk2DNofPnIpOSmklBMAbyG', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@mcclure.co')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"not@valid.mail", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'not@valid.mail' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'not@valid.mail' LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$fq.y8.2me5saF9rkL3UZx.vvz0aBim5SQZAr7ythm3CeEFv9ydIMq', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@rodriguezzemlak.net')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"anonymous", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'anonymous' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'anonymous' LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$uYRy1acMyZAXMsXEEtAcLe08mgI15iBOwnOtjsidBI/u7TMQJM8H2', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@bahringer.name')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#login as JSON
+  Parameters: {"login"=>"codsworth@bahringer.name", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'codsworth@bahringer.name' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'codsworth@bahringer.name' LIMIT 1[0m
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$vf7KVNey0CleV4rxqntZpeXgTTwv/AbjiljqvhsS4grRu.i5gUsSa', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@brown.io')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#delete as JSON
+  Parameters: {"login"=>"codsworth@brown.io", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'codsworth@brown.io' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'codsworth@brown.io' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 361[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$SfSSVlPTGK0UgdpHW.H6MO7eHFQcJ5PwW10ZrGP5BViFcanKpVPl2', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@effertzcarroll.org')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#delete as JSON
+  Parameters: {"login"=>"mc_hammer", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'mc_hammer' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'mc_hammer' LIMIT 1[0m
+Completed 404 Not Found in 1ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$vY/mgXoRZJWjB0A3VaSJFeIcM.K.SANKEw6cGsB1d6cGBLt7Cewxi', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@pfeffermarquardt.name')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by LoginController#delete as JSON
+  Parameters: {"login"=>"codsworth@pfeffermarquardt.name", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'codsworth@pfeffermarquardt.name' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'codsworth@pfeffermarquardt.name' LIMIT 1[0m
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `password_digest`, `created_at`, `updated_at`, `email`) VALUES ('codsworth', '$2a$04$Eixqji57Ar1o2BsNBzHEXuA.WPjpNTLyfP1ioT91o01N.cvCQFtN6', '2018-02-16 17:18:01', '2018-02-16 17:18:01', 'codsworth@stroman.co')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`username` = BINARY 'codsworth' AND (`users`.`id` != 364) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = 'codsworth' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'codsworth@stroman.co' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 364[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m

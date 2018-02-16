@@ -12,24 +12,6 @@
 # SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines
 
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBrackets.
-# SupportedStyles: space, no_space, compact
-# SupportedStylesForEmptyBrackets: space, no_space
-Layout/SpaceInsideArrayLiteralBrackets:
-  Exclude:
-    - 'config/environments/production.rb'
-
-# Offense count: 8
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
-# SupportedStyles: space, no_space
-# SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideBlockBraces:
-  Exclude:
-    - 'spec/fabricators/user_fabricator.rb'
-
 # Offense count: 16
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleForEmptyBraces.
