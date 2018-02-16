@@ -14,8 +14,8 @@ RSpec.describe LoginController, type: :controller do
     end
 
     it "creates a user" do
-     post :create, as: :json, params: @user_data
-     assert_response :created
+      post :create, as: :json, params: @user_data
+      assert_response :created
     end
 
     it "checks for duplicate users" do
