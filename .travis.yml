@@ -24,6 +24,7 @@ notifications:
 
 deploy:
   - provider: script
+    skip_cleanup: true  
     script: bin/reports.sh
     on:
       branch: rewrite
