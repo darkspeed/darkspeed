@@ -1,30 +1,36 @@
 language: ruby
 rvm: 2.5.0
 cache: bundler
-
 services:
-  - mysql
+- mysql
 
 addons:
   ssh_known_hosts: aaronjsutton.com
 
+before_install:
+  - openssl aes-256-cbc -K $encrypted_11f044cd08cf_key -iv $encrypted_11f044cd08cf_iv
+  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 /tmp/deploy_rsa
+  - ssh-add /tmp/deploy_rsa
+
 install:
-  - bundle install --jobs=3 --retry=3
-  - bundle exec rake db:create
-  - bundle exec rake db:schema:load
+- bundle install --jobs=3 --retry=3
+- bundle exec rake db:create
+- bundle exec rake db:schema:load
 
 script:
-  - brakeman -f html -o /tmp/report.html
-  - rubocop -f html -o /tmp/rubocop.html
-  - bundle exec rake spec
+- brakeman -f html -o /tmp/report.html
+- rubocop -f html -o /tmp/rubocop.html
+- bundle exec rake spec
 
 notifications:
   email:
-    - ajsutton.dev@gmail.com
+  - ajsutton.dev@gmail.com
 
 deploy:
-  - provider: script
-    skip_cleanup: true  
-    script: bin/reports.sh
-    on:
-      branch: rewrite
+- provider: script
+  skip_cleanup: true
+  script: bin/reports.sh
+  on:
+    branch: rewrite
