@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'fabrication'
   gem 'faker'
+  gem 'brakeman', :require => false
 end
 
 gem 'passenger'

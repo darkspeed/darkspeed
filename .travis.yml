@@ -5,6 +5,12 @@ cache: bundler
 services:
   - mysql
 
+env:
+  global:
+    - REMOTE_DIR=/var/www/darkspeed-dev
+    - REMOTE_USER=darkspeed
+    - REMOTE_HOST=104.236.114.192
+
 install:
   - bundle install --jobs=3 --retry=3
   - bundle exec rake db:create
@@ -12,6 +18,7 @@ install:
 
 script:
   - bundle exec rake spec
+  - brakeman -f html -o /tmp/report.html
 
 notifications:
   email:
