@@ -19,7 +19,7 @@ install:
 - bundle exec rake db:schema:load
 
 script:
-- brakeman -f html -o /tmp/report.html
+- brakeman -f html -o /tmp/security.html
 - rubocop -f html -o /tmp/rubocop.html
 - bundle exec rake spec
 
