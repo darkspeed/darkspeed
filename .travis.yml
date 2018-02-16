@@ -23,12 +23,7 @@ notifications:
     - ajsutton.dev@gmail.com
 
 deploy:
-  skip_cleanup: true
-  provider: script
-  script:
-    # Upload Brakeman Report
-    - rsync -rz --delete-after --quiet /tmp/report.html darkspeed@aaronjsutton.com:/var/www/darkspeed-dev/security
-    # Upload RuboCop Report
-    - rsync -rz --delete-after --quiet /tmp/report.html darkspeed@aaronjsutton.com:/var/www/darkspeed-dev/security
-   on:
+  - provider: script
+    script: bin/reports.sh
+    on:
       branch: rewrite
