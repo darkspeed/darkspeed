@@ -30,7 +30,6 @@ class LoginController < ApplicationController
 
     # TODO: Method call to get server config from config file
     # Send config to client
-
   end
 
   # Refactor?
@@ -83,6 +82,5 @@ class LoginController < ApplicationController
 
   # TODO: Refactor, SendGrid, and spec.
   def reset_password
-
   end
 end
