@@ -14,8 +14,9 @@ install:
   - bundle exec rake db:schema:load
 
 script:
-  - bundle exec rake spec
   - brakeman -f html -o /tmp/report.html
+  - rubocop -f html -o /tmp/rubocop.html
+  - bundle exec rake spec
 
 notifications:
   email:
@@ -26,6 +27,8 @@ deploy:
   provider: script
   script:
     # Upload Brakeman Report
-    - rsync -r --delete-after --quiet /tmp/report.html darkspeed@aaronjsutton.com:/var/www/darkspeed-dev/security
+    - rsync -rz --delete-after --quiet /tmp/report.html darkspeed@aaronjsutton.com:/var/www/darkspeed-dev/security
+    # Upload RuboCop Report
+    - rsync -rz --delete-after --quiet /tmp/report.html darkspeed@aaronjsutton.com:/var/www/darkspeed-dev/security
    on:
       branch: rewrite
