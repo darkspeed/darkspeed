@@ -1,7 +1,6 @@
 require 'bcrypt'
 
 class LoginController < ApplicationController
-
   def find_user_by(login)
     user = User.find_by(username: login)
     user ||= User.find_by(email: login)
@@ -86,5 +85,4 @@ class LoginController < ApplicationController
   def reset_password
 
   end
-
 end
