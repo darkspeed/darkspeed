@@ -1,6 +1,10 @@
 require 'bcrypt'
 
 class LoginController < ApplicationController
+  before_action do
+    @data = JSON.parse request.body.read, symbolize_names: true
+  end
+
   def find_user_by(login)
     user = User.find_by(username: login)
     user ||= User.find_by(email: login)
@@ -8,10 +12,8 @@ class LoginController < ApplicationController
   end
 
   def login
-    # Parse request
-    data = JSON.parse request.body.read, symbolize_names: true
-    login = data[:login]
-    password = data[:password]
+    login = @data[:login]
+    password = @data[:password]
 
     # Find the user
     user = find_user_by login
@@ -34,13 +36,11 @@ class LoginController < ApplicationController
 
   # Refactor?
   def create
-    # Parse request
-    data = JSON.parse request.body.read, symbolize_names: true
-
     # Create the new user
-    new_user = User.new username: data[:username], email: data[:email]
-    new_user.password = data[:password]
-    new_user.password_confirmation = data[:password_confirmation]
+    new_user = User.new username: @data[:username],
+                        email: @data[:email],
+                        password: @data[:password],
+                        password_confirmation: @data[:password_confirmation]
 
     # Save the user to the database
     unless new_user.save
@@ -53,10 +53,8 @@ class LoginController < ApplicationController
   end
 
   def delete
-    # Parse request
-    data = JSON.parse request.body.read, symbolize_names: true
-    login = data[:login]
-    password = data[:password]
+    login = @data[:login]
+    password = @data[:password]
 
     # Find the user
     user = find_user_by login
