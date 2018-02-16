@@ -25,5 +25,3 @@ deploy:
   skip_cleanup: true
   provider: script
   script: rsync -r --delete-after --quiet /tmp/report.html darkspeed@aaronjsutton.com:/var/www/darkspeed-dev/security
-  on:
-    branch: master
