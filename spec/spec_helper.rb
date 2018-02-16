@@ -46,16 +46,7 @@ RSpec.configure do |config|
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
-  SimpleCov.start do
-    add_filter '/test/'
-    add_filter '/config/'
-    add_filter '/vendor/'
-
-    add_group 'Controllers', 'app/controllers'
-    add_group 'Models', 'app/models'
-    add_group 'Helpers', 'app/helpers'
-    add_group 'Mailers', 'app/mailers'
-  end
+  SimpleCov.start 'rails'
   # This outputs the report to your public folder
   SimpleCov.coverage_dir 'public/coverage'
 
