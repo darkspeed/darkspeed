@@ -1,10 +1,8 @@
 #!/bin/bash
 HOST=darkspeed@aaronjsutton.com
-ROOT=/var/www/darkspeed-dev/
-REPORTS=$ROOT/report/
-COVERAGE=$ROOT/$REPORTS/coverage/
+ROOT=/var/www/darkspeed-dev
 
-rsync -qrz --delete-after docs/ darkspeed@aaronjsutton.com:$ROOT
-rsync -qrz --delete-after /tmp/security.html darkspeed@aaronjsutton.com:$REPORTS
-rsync -qrz --delete-after /tmp/rubocop.html darkspeed@aaronjsutton.com:$REPORTS
-rsync -qrz --delete-after public/coverage darkspeed@aaronjsutton.com:$COVERAGE
+rsync -qrz --delete-after docs/ darkspeed@aaronjsutton.com:$ROOT/
+rsync -qrz --delete-after /tmp/security.html darkspeed@aaronjsutton.com:$ROOT/report
+rsync -qrz --delete-after /tmp/rubocop.html darkspeed@aaronjsutton.com:$ROOT/report
+rsync -qrz --delete-after public/coverage darkspeed@aaronjsutton.com:$ROOT/report/coverage
