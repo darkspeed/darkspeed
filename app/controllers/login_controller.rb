@@ -1,5 +1,6 @@
 require 'bcrypt'
 
+# Manages DarkSpeed user login.
 class LoginController < ApplicationController
   before_action do
     @data = JSON.parse request.body.read, symbolize_names: true
@@ -29,7 +30,6 @@ class LoginController < ApplicationController
     # Send config to client
   end
 
-  # Refactor?
   def create
     # Create the new user
     new_user = User.new username: @data[:username],

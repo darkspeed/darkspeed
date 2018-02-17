@@ -1,5 +1,6 @@
 require 'bcrypt'
 
+# DarkSpeed standard user.
 class User < ApplicationRecord
   has_secure_password
 

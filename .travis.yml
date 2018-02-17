@@ -18,6 +18,9 @@ install:
   - bundle exec rake db:create
   - bundle exec rake db:schema:load
 
+before_script:
+  - yardoc
+
 script:
   - brakeman -f html -o /tmp/security.html
   - rubocop -f html -o /tmp/rubocop.html --fail-level E

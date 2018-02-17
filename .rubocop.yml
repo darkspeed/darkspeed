@@ -8,3 +8,9 @@ AllCops:
 Style/SymbolArray:
   Exclude:
     - Gemfile
+
+Style/Documentation:
+  Exclude:
+    - app/helpers/*.rb
+    - app/mailers/*.rb
+    - app/models/application_record.rb
