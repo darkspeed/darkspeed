@@ -8,28 +8,23 @@ class LoginController < ApplicationController
   def find_user_by(login)
     user = User.find_by(username: login)
     user ||= User.find_by(email: login)
-    return user || nil
+    head :not_found unless user
+    return user
+  end
+
+  def user_auth?(user, password)
+    unless user.authenticate password
+      head :forbidden
+      return false
+    end
+    return true
   end
 
   def login
-    login = @data[:login]
-    password = @data[:password]
-
-    # Find the user
-    user = find_user_by login
-    unless user
-      head :not_found
-      return
-    end
-
-    # Password does not match
-    unless user.authenticate password
-      head :forbidden
-      return
-    end
-
+    # Find and authenticatethe user
+    user = find_user_by @data[:login]
+    return unless user && user_auth?(user, @data[:password])
     head :accepted
-
     # TODO: Method call to get server config from config file
     # Send config to client
   end
@@ -53,28 +48,12 @@ class LoginController < ApplicationController
   end
 
   def delete
-    login = @data[:login]
-    password = @data[:password]
-
-    # Find the user
-    user = find_user_by login
-    unless user
-      head :not_found
-      return
-    end
-
-    # Authenticate
-    unless user.authenticate password
-      head :forbidden
-      return
-    end
-
-    # Delete the user
+    user = find_user_by @data[:login]
+    return unless user && user_auth?(user, @data[:password])
     unless user.destroy
       head :internal_server_error
       return
     end
-
     head :ok
   end
 
