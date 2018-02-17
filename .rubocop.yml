@@ -3,4 +3,8 @@ AllCops:
   Exclude:
     - 'spec/**/*.rb'
     - 'config/**/*.rb'
+    - 'db/**/*.rb'
     - 'bin/*'
+Style/SymbolArray:
+  Exclude:
+    - Gemfile

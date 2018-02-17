@@ -9,7 +9,7 @@ class LoginController < ApplicationController
     user = User.find_by(username: login)
     user ||= User.find_by(email: login)
     head :not_found unless user
-    return user
+    user
   end
 
   def user_auth?(user, password)
@@ -17,7 +17,7 @@ class LoginController < ApplicationController
       head :forbidden
       return false
     end
-    return true
+    true
   end
 
   def login
@@ -58,6 +58,5 @@ class LoginController < ApplicationController
   end
 
   # TODO: Refactor, SendGrid, and spec.
-  def reset_password
-  end
+  def reset_password; end
 end
