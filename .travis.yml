@@ -20,7 +20,7 @@ install:
 
 script:
   - brakeman -f html -o /tmp/security.html
-  - rubocop -f html -o /tmp/rubocop.html
+  - rubocop -f html -o /tmp/rubocop.html --fail-level E
   - bundle exec rake spec
 
 notifications:
