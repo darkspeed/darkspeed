@@ -1,8 +1,8 @@
 #!/bin/bash
 HOST=darkspeed@aaronjsutton.com
 ROOT=/var/www/darkspeed-dev/
-REPORTS=$ROOT/report
-COVERAGE=$ROOT/$REPORT/coverage
+REPORTS=$ROOT/report/
+COVERAGE=$ROOT/$REPORTS/coverage/
 
 rsync -qrz --delete-after docs/ darkspeed@aaronjsutton.com:$ROOT
 rsync -qrz --delete-after /tmp/security.html darkspeed@aaronjsutton.com:$REPORTS
