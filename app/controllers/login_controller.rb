@@ -4,6 +4,7 @@ require 'bcrypt'
 class LoginController < ApplicationController
   before_action do
     @data = JSON.parse request.body.read, symbolize_names: true
+    Raven.user_context(id: @data[:username], email: @data[:email])
   end
 
   def find_user_by(login)
