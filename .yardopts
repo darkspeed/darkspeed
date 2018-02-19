@@ -1,1 +1,3 @@
 -o docs/
+--title DarkSpeed Documentation
+{lib,app}/**/*.rb
