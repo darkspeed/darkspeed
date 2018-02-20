@@ -4,7 +4,7 @@ RSpec.describe Darksocks::Server do
     ENV["DARKSPEED_HOSTNAME"] = "darkspeed.test"
     ENV["DARKSPEED_PASSWORD"] = "testpassword"
     @symbol = :main
-    @profile = Profile.read @symbol
+    @profile = Profile.config_for @symbol
     @json = Darksocks::Server.make_config @symbol
   end
 

@@ -2,7 +2,7 @@
 # @author Aaron Sutton <aaronjsutton@icloud.com>#
 #
 # @example Get the main profile
-#   Profile.read :main # => {:password: "password", port: 8796}
+#   Profile.config_for :main # => {:password: "password", port: 8796}
 #
 class Profile
   @filepath = Rails.root.join 'config/darksocks.yml'
@@ -10,7 +10,7 @@ class Profile
   #
   # @param profile [Symbol] The profile to read from the configuration file.
   # @return [Hash] A hash containing the port and password of the profile.
-  def self.read(profile)
+  def self.config_for(profile)
     template = ERB.new File.new(@filepath).read
     config = Psych.load(template.result).symbolize_keys
     return config[profile].symbolize_keys if config[profile]

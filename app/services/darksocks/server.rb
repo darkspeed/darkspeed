@@ -14,8 +14,8 @@ module Darksocks
     # @param profile [Symbol] The profile to use. Ex: main or gateway.
     # @return The JSON data created.
     def self.make_config(profile)
-      profile = Profile.read(profile)
-      options = Profile.read(:global)
+      profile = Profile.config_for(profile)
+      options = Profile.config_for(:global)
       JSON(
         server: profile[:host], server_port: profile[:port].to_s,
         local_address: '0.0.0.0', local_port: '8080',
