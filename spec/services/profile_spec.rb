@@ -1,5 +1,5 @@
 RSpec.describe Profile do
-  before :all do
+  before :each do
     @global = Profile.read(:global)
     ENV["DARKSPEED_HOSTNAME"] = 'darkspeed.test'
   end
