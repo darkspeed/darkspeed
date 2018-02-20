@@ -1,12 +1,16 @@
 require 'bcrypt'
 
-# Manages DarkSpeed user login.
+# @abstract Manages DarkSpeed user login.
 class LoginController < ApplicationController
   before_action do
     @data = JSON.parse request.body.read, symbolize_names: true
     Raven.user_context(id: @data[:username], email: @data[:email])
   end
 
+  # Find a user by a given login.
+  # @param login [String] Email or username.
+  # @return [User?] The user, nil if not found.
+  # @note When a user is not found, a status of 404 is set. 
   def find_user_by(login)
     user = User.find_by(username: login)
     user ||= User.find_by(email: login)
