@@ -1,6 +1,6 @@
-task default: :rubocop
+task default: :cop
 
-task :rubocop do
+task :cop do
   puts '=' * 20
   system 'rubocop'
 end
