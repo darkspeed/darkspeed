@@ -1,8 +1,9 @@
 # Define the profiles for operating the DarkSocks server
 
-cipher: aes-256-ctr
-executable: ss-local
-host: <%= ENV["DARKSPEED_HOSTNAME"] %>
+global:
+  cipher: aes-256-ctr
+  executable: ss-local
+  host: <%= ENV["DARKSPEED_HOSTNAME"] %>
 
 # Server used to create temporary connections while authenticating
 gateway:

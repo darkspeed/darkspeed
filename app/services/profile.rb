@@ -11,7 +11,8 @@ class Profile
   # @param profile [Symbol] The profile to read from the configuration file.
   # @return [Hash] A hash containing the port and password of the profile.
   def self.read(profile)
-    config = Psych.load_file(@filepath).symbolize_keys
+    template = ERB.new File.new(@filepath).read
+    config = Psych.load(template.result).symbolize_keys
     return config[profile].symbolize_keys if config[profile]
     nil
   end
