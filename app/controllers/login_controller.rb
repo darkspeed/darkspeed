@@ -10,7 +10,7 @@ class LoginController < ApplicationController
   # Find a user by a given login.
   # @param login [String] Email or username.
   # @return [User?] The user, nil if not found.
-  # @note When a user is not found, a status of 404 is set. 
+  # @note When a user is not found, a status of 404 is set.
   def find_user_by(login)
     user = User.find_by(username: login)
     user ||= User.find_by(email: login)
