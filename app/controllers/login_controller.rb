@@ -1,6 +1,6 @@
 require 'bcrypt'
 
-# @abstract Manages DarkSpeed user login.
+# Manages DarkSpeed user login.
 class LoginController < ApplicationController
   before_action do
     @data = JSON.parse request.body.read, symbolize_names: true

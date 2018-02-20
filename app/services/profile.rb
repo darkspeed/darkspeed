@@ -1,4 +1,4 @@
-# @abstract Manage configuration of the underlying DarkSocks processes.
+# Manage configuration of the underlying DarkSocks processes.
 # @author Aaron Sutton <aaronjsutton@icloud.com>#
 #
 # @example Get the main profile
