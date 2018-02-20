@@ -2,7 +2,7 @@
 
 cipher: aes-256-ctr
 executable: ss-local
-host: <%= ENV["DARKSOCKS_HOSTNAME"] %>
+host: <%= ENV["DARKSPEED_HOSTNAME"] %>
 
 # Server used to create temporary connections while authenticating
 gateway:
@@ -12,4 +12,4 @@ gateway:
 # Server used by authenticated users
 main:
   port: 8008
-  password: <%= ENV["DARKSOCKS_PASSWORD"] %>
+  password: <%= ENV["DARKSPEED_PASSWORD"] %>
