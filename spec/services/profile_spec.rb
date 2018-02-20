@@ -10,4 +10,16 @@ RSpec.describe Profile do
     profile = Profile.read :not_real
     expect(profile).to be nil
   end
+
+  it 'returns the executable' do
+    expect(Profile.global :executable).not_to be nil
+  end
+
+  it 'returns the cipher' do
+    expect(Profile.global :cipher).not_to be nil
+  end
+
+  it 'returns the host' do
+    expect(Profile.global :host).not_to be nil
+  end
 end

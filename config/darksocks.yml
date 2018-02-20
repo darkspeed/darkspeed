@@ -1,5 +1,9 @@
 # Define the profiles for operating the DarkSocks server
 
+cipher: aes-256-ctr
+executable: ss-local
+host: <%= ENV["DARKSOCKS_HOSTNAME"] %>
+
 # Server used to create temporary connections while authenticating
 gateway:
   port: 5456

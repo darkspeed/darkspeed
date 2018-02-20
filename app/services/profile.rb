@@ -15,4 +15,11 @@ class Profile
     return config[profile].symbolize_keys if config[profile]
     nil
   end
+
+  # Get a global configuration option
+  # @param [Symbol] The option name
+  # @return The option
+  def self.global(property)
+    Psych.load_file(@filepath).symbolize_keys[property]
+  end
 end
