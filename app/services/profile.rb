@@ -21,6 +21,6 @@ class Profile
   # @param [Symbol] The option name
   # @return The option
   def self.global(property)
-    Psych.load_file(@filepath).symbolize_keys[property]
+    config_for(:global)[property]
   end
 end

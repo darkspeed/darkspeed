@@ -17,7 +17,7 @@ RSpec.describe Profile do
   end
 
   it 'returns the executable' do
-    expect(@global[:executable]).not_to be nil
+    expect(Profile.global :command).not_to be nil
   end
 
   it 'returns the cipher' do

@@ -2,7 +2,7 @@
 
 global:
   cipher: aes-256-ctr
-  executable: ss-local
+  command: ss-server
   host: <%= ENV["DARKSPEED_HOSTNAME"] %>
 
 # Server used to create temporary connections while authenticating

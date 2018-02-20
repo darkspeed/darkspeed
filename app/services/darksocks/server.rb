@@ -2,9 +2,21 @@
 module Darksocks
   # Controls the running ds-server or ss-server processes.
   class Server
-    @config_path = Rails.root.join 'app/services/darksocks/'
+    @service_path = Rails.root.join 'app/services/darksocks/'
 
-    def self.start(profile); end
+    def self.path_for(symbol, ext = 'json')
+      @service_path.join "#{symbol}.#{ext}"
+    end
+
+    # Start DarkSocks server
+    # @param profile [Symbol] The profile to use.
+    def self.start(profile)
+      write(make_config(profile), profile)
+      path = path_for profile
+      pid = Process.spawn(Profile.global(:command), "-c: #{path}")
+      Process.detach pid
+      File.open(path_for(profile, 'pid'), 'w').write pid
+    end
 
     def self.stop(profile); end
 
@@ -19,10 +31,10 @@ module Darksocks
       JSON(
         server: profile[:host], server_port: profile[:port].to_s,
         local_address: '0.0.0.0', local_port: '8080',
-        password: profile[:password], timeout: options[:timeout],
-        method: options[:cipher], fast_open: options[:cipher],
+        password: profile[:password], method: options[:cipher],
+        timeout: options[:timeout], fast_open: options[:cipher],
         plugin: 'obfs-local',
-        'plugin-opts' => 'obfs=http;obfs-host=www.bing.com'
+        'plugin-opts' => 'obfs=http;obfs-host=www.google.com'
       )
     end
 
@@ -32,11 +44,13 @@ module Darksocks
     # @param config [String] The data to write.
     # @param symbol [Symbol] The name of the profile.
     def self.write(config, symbol)
-      file = File.open(@config_path.join("#{symbol}.json"), 'w')
+      file = File.open(path_for(symbol), 'w')
       file.write config
       file.close
     end
 
-    def self.read_pid(file); end
+    def self.read_pid(profile)
+      File.new(path_for(profile)).read
+    end
   end
 end

@@ -4,6 +4,10 @@ RSpec.describe Darksocks::Server do
     ENV["DARKSPEED_HOSTNAME"] = "darkspeed.test"
     ENV["DARKSPEED_PASSWORD"] = "testpassword"
     @symbol = :main
+    %i{:json, :pid}.each do |ext|
+      filepath = Rails.root.join "app/services/darksocks/#{@symbol}.#{ext.to_s}"
+      File.delete filepath if File.exists? filepath
+    end
     @profile = Profile.config_for @symbol
     @json = Darksocks::Server.make_config @symbol
   end
@@ -21,12 +25,11 @@ RSpec.describe Darksocks::Server do
  end
 
  describe 'process stop/start' do
-   it 'starts'
+   it 'starts' do
+     Darksocks::Server.start :main
+     expect(File.exists?(Rails.root.join "app/services/darksocks/main.pid")).to be true
+   end
    it 'stops'
    it 'gets status'
- end
-
- after :all do
-   File.delete Rails.root.join "app/services/darksocks/#{@symbol}.json"
  end
 end
