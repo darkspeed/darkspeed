@@ -5,7 +5,7 @@
 #   Profile.read :main # => {:password: "password", port: 8796}
 #
 class Profile
-  @filepath = "#{Rails.root}/config/darksocks.yml"
+  @filepath = Rails.root.join 'config/darksocks.yml'
   # Read the YAML configuration file.
   #
   # @param profile [Symbol] The profile to read from the configuration file.

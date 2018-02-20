@@ -1,4 +1,9 @@
 RSpec.describe Profile do
+  before :all do
+    @global = Profile.read(:global)
+    ENV["DARKSPEED_HOSTNAME"] = 'darkspeed.test'
+  end
+
   it 'reads the configuration file' do
     profile = Profile.read :gateway
     expect(profile).not_to be nil
@@ -12,14 +17,14 @@ RSpec.describe Profile do
   end
 
   it 'returns the executable' do
-    expect(Profile.global :executable).not_to be nil
+    expect(@global[:executable]).not_to be nil
   end
 
   it 'returns the cipher' do
-    expect(Profile.global :cipher).not_to be nil
+    expect([:cipher]).not_to be nil
   end
 
-  it 'returns the host' do
-    expect(Profile.global :host).not_to be nil
+  it 'preprocesses ERB' do
+    expect(@global[:host]).to eq(ENV["DARKSPEED_HOSTNAME"])
   end
 end
