@@ -4,10 +4,6 @@ module Darksocks
   class Server
     @service_path = Rails.root.join 'app/services/darksocks/'
 
-    def self.path_for(symbol, ext = 'json')
-      @service_path.join "#{symbol}.#{ext}"
-    end
-
     # Start DarkSocks server
     # @param profile [Symbol] The profile to use.
     def self.start(profile)
@@ -79,6 +75,10 @@ module Darksocks
       pid = Process.spawn command
       Process.detach pid
       pid
+    end
+
+    def self.path_for(symbol, ext = 'json')
+      @service_path.join "#{symbol}.#{ext}"
     end
   end
 end
