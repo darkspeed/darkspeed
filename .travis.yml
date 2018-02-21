@@ -12,11 +12,8 @@ before_install:
   - eval "$(ssh-agent -s)"
   - chmod 600 /tmp/deploy_rsa
   - ssh-add /tmp/deploy_rsa
-  - sudo apt-get install software-properties-common -y
-  - sudo add-apt-repository ppa:max-c-lv/shadowsocks-libev -y
-  - sudo apt-get update
-  - sudo apt install shadowsocks-libev simple-obfs
-  
+  - bin/travis-deps
+
 install:
   - bundle install --jobs=3 --retry=3
   - bundle exec rake db:create
@@ -37,7 +34,7 @@ notifications:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: bin/reports.sh
+    script: bin/reports
     on:
       branch:
         - rewrite
