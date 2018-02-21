@@ -34,6 +34,7 @@ group :development, :test do
   gem 'fabrication'
   gem 'faker'
   gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-wait'
   gem 'rubocop', require: false
   gem 'selenium-webdriver'
   gem 'simplecov', require: false

@@ -1,6 +1,6 @@
 require 'bcrypt'
 
-# @abstract Manages DarkSpeed user login.
+# Manages DarkSpeed user login.
 class LoginController < ApplicationController
   before_action do
     @data = JSON.parse request.body.read, symbolize_names: true
@@ -32,11 +32,12 @@ class LoginController < ApplicationController
     return unless user && user_auth?(user, @data[:password])
     head :accepted
     # TODO: Method call to get server config from config file
-    # Send config to client
+    # Send config to client <---
   end
 
   def create
     # Create the new user
+
     new_user = User.new username: @data[:username],
                         email: @data[:email],
                         password: @data[:password],

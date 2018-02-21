@@ -33,7 +33,7 @@ notifications:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: bin/reports.sh
+    script: bin/reports
     on:
       branch:
         - rewrite

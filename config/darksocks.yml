@@ -1,5 +1,13 @@
 # Define the profiles for operating the DarkSocks server
 
+global:
+  cipher: aes-256-ctr
+  command: ss-server
+  host: <%= ENV["DARKSPEED_HOSTNAME"] %>
+  timeout: 600
+  plugin: obfs-server
+  obfs: obfs=http
+
 # Server used to create temporary connections while authenticating
 gateway:
   port: 5456
@@ -8,4 +16,4 @@ gateway:
 # Server used by authenticated users
 main:
   port: 8008
-  password: <%= ENV["DARKSOCKS_PASSWORD"] %>
+  password: <%= ENV["DARKSPEED_PASSWORD"] %>
