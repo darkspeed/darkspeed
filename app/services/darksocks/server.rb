@@ -24,6 +24,8 @@ module Darksocks
       pid
     end
 
+    # Shutdown DarkSocks server
+    # @param profile [Symbol] The profile to kill.
     def self.shutdown(profile)
       return nil unless running? profile
       pid = read_pid(profile)
@@ -32,6 +34,8 @@ module Darksocks
       File.delete path_for profile, 'pid'
     end
 
+    # Status of a profile
+    # @param profile [Symbol] The profile to use.
     def self.running?(profile)
       return true if read_pid profile
       false
@@ -51,13 +55,13 @@ module Darksocks
       )
     end
 
+    private_class_method
+
     def self.read_pid(profile)
       path = path_for(profile, 'pid')
       return nil unless File.exist? path
       File.new(path).read.to_i
     end
-
-    private_class_method
 
     def self.store_pid(pid, profile)
       pidfile = File.new(path_for(profile, 'pid'), 'w')
@@ -65,9 +69,6 @@ module Darksocks
       pidfile.close
     end
 
-    # Writes a config file
-    # @param config [String] The data to write.
-    # @param symbol [Symbol] The name of the profile.
     def self.write(config, symbol)
       file = File.open(path_for(symbol), 'w')
       file.write config

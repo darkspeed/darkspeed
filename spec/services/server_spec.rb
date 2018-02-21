@@ -25,8 +25,7 @@ RSpec.describe Darksocks::Server do
  end
 
  it 'stops/starts' do
-   server = Darksocks::Server.start @symbol
-   expect(Darksocks::Server.read_pid @symbol).to eq server
+   Darksocks::Server.start @symbol
    expect(Darksocks::Server.running? @symbol).to be true
    Darksocks::Server.shutdown @symbol
    expect(Darksocks::Server.running? @symbol).to be false
