@@ -72,6 +72,8 @@ RSpec.describe LoginController, type: :controller do
       assert_response :accepted
     end
 
+    pending 'returns config'
+
     it "rejects an email that does not exist" do
       post :login, as: :json, params: { login: "not@valid.mail", password: @password }
       assert_response :not_found
