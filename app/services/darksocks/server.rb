@@ -19,7 +19,7 @@ module Darksocks
       opts = Profile.global :opts
       # Spawn process
       command = %(#{exec} -c #{path} --plugin #{plugin} --plugin-opts "#{opts}")
-      pid = startup(command, profile)
+      pid = startup command
       store_pid pid, profile
       pid
     end
@@ -27,7 +27,7 @@ module Darksocks
     def self.shutdown(profile)
       return nil unless running? profile
       pid = read_pid(profile)
-      raise if pid == 0
+      raise if pid.zero?
       Process.kill('SIGINT', pid)
       File.delete path_for profile, 'pid'
     end
