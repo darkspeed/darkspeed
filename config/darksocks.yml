@@ -4,6 +4,9 @@ global:
   cipher: aes-256-ctr
   command: ss-server
   host: <%= ENV["DARKSPEED_HOSTNAME"] %>
+  timeout: 600
+  plugin: obfs-server
+  obfs: obfs=http
 
 # Server used to create temporary connections while authenticating
 gateway:

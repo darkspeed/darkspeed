@@ -12,15 +12,30 @@ module Darksocks
     # @param profile [Symbol] The profile to use.
     def self.start(profile)
       write(make_config(profile), profile)
+      # Get options
       path = path_for profile
-      pid = Process.spawn(Profile.global(:command), "-c: #{path}")
-      Process.detach pid
-      File.open(path_for(profile, 'pid'), 'w').write pid
+      exec = Profile.global :command
+      plugin = Profile.global :plugin
+      opts = Profile.global :opts
+      # Spawn process
+      command = %(#{exec} -c #{path} --plugin #{plugin} --plugin-opts "#{opts}")
+      pid = startup(command, profile)
+      store_pid pid, profile
+      pid
     end
 
-    def self.stop(profile); end
+    def self.shutdown(profile)
+      return nil unless running? profile
+      pid = read_pid(profile)
+      raise if pid == 0
+      Process.kill('SIGINT', pid)
+      File.delete path_for profile, 'pid'
+    end
 
-    def self.running?(profile); end
+    def self.running?(profile)
+      return true if read_pid profile
+      false
+    end
 
     # Generate a JSON configuration
     # @param profile [Symbol] The profile to use. Ex: main or gateway.
@@ -32,13 +47,23 @@ module Darksocks
         server: profile[:host], server_port: profile[:port].to_s,
         local_address: '0.0.0.0', local_port: '8080',
         password: profile[:password], method: options[:cipher],
-        timeout: options[:timeout], fast_open: options[:cipher],
-        plugin: 'obfs-local',
-        'plugin-opts' => 'obfs=http;obfs-host=www.google.com'
+        timeout: options[:timeout], fast_open: false
       )
     end
 
+    def self.read_pid(profile)
+      path = path_for(profile, 'pid')
+      return nil unless File.exist? path
+      File.new(path).read.to_i
+    end
+
     private_class_method
+
+    def self.store_pid(pid, profile)
+      pidfile = File.new(path_for(profile, 'pid'), 'w')
+      pidfile.write pid
+      pidfile.close
+    end
 
     # Writes a config file
     # @param config [String] The data to write.
@@ -49,8 +74,10 @@ module Darksocks
       file.close
     end
 
-    def self.read_pid(profile)
-      File.new(path_for(profile)).read
+    def self.startup(command)
+      pid = Process.spawn command
+      Process.detach pid
+      pid
     end
   end
 end
