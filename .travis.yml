@@ -5,11 +5,14 @@ cache: bundler
 services:
 - mysql
 addons:
-  ssh_known_hosts: aaronjsutton.com
-  apt:
+  - apt:
+    sources:
+      - ppa:max-c-lv/shadowsocks-libev
     packages:
+    - software-properties-common
     - shadowsocks-libev
     - simple-obfs
+  - ssh_known_hosts: aaronjsutton.com
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_11f044cd08cf_key -iv $encrypted_11f044cd08cf_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
