@@ -1,4 +1,5 @@
+include Faker
 Fabricator(:admin) do
-  username        "MyString"
-  password_digest "MyString"
+  username        Internet.user_name DrWho.character
+  password_digest Internet.password
 end

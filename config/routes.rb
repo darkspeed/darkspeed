@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'console/status'
+  get '/admin' => 'sessions#new'
+  post '/admin' => 'sessions#create'
+  get '/admin/logout' => 'sessions#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   match '/login' => 'login#login', via: :post
