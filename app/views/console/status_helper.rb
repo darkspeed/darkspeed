@@ -1,7 +1,7 @@
 # allows status.html.erb to use darksocks for server control
 class StatusHelper
   include Darksocks
-  def start_server(name)
+  def self.start_server(name)
     case name
     when 'main'
       Darksocks::Server.start :main
@@ -10,7 +10,7 @@ class StatusHelper
     end
   end
 
-  def stop_server(name)
+  def self.stop_server(name)
     case name
     when 'main'
       Darksocks::Server.shutdown :main
