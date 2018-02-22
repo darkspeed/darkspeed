@@ -1,12 +1,10 @@
+# Displays the console for managing the server.
 class ConsoleController < ApplicationController
-  # DEVELOPMENT ONLY
-  # before_action :require_admin
+  before_action :require_admin
 
   private
 
   def require_admin
-    unless logged_in?
-      redirect_to admin_url
-    end
+    redirect_to admin_url unless logged_in?
   end
 end
