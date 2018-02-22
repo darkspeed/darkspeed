@@ -11,8 +11,8 @@ class LoginController < ApplicationController
   # @return [User?] The user, nil if not found.
   # @note When a user is not found, a status of 404 is set.
   def find_user_by(login)
-    user = User.find_by(username: login)
-    user ||= User.find_by(email: login)
+    user = User.find_by_username login
+    user ||= User.find_by_email login
     head :not_found unless user
     user
   end
@@ -62,7 +62,6 @@ class LoginController < ApplicationController
   private
 
   def create_user
-    # Create the new user
     User.new username: params[:username],
              email: params[:email],
              password: params[:password],
