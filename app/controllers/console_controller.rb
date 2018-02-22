@@ -1,5 +1,6 @@
 class ConsoleController < ApplicationController
-  before_action :require_admin
+  # DEVELOPMENT ONLY
+  # before_action :require_admin
 
   private
 
