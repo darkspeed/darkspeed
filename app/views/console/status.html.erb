@@ -1,5 +1,6 @@
+
 <h1>DarkSpeed Admin Console</h1>
-<p>Main server status:
+<p>Main server status: <%= Darksocks::Server.running? :main %>
 <button>Start the main server</button>
 <button>Stop the main server</button>
 </p>
