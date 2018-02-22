@@ -65,14 +65,15 @@ RSpec.describe LoginController, type: :controller do
     it "logs in a user by username" do
       post :login, as: :json, params: { login: @user[:username], password: @password }
       assert_response :accepted
+      expect(response.body).not_to be nil
     end
 
     it "logs in a user by email" do
       post :login, as: :json, params: { login: @user[:email], password: @password }
       assert_response :accepted
+      expect(response.body).not_to be nil
     end
 
-    pending 'returns config'
 
     it "rejects an email that does not exist" do
       post :login, as: :json, params: { login: "not@valid.mail", password: @password }

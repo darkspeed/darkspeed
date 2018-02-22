@@ -29,9 +29,8 @@ class LoginController < ApplicationController
     # Find and authenticatethe user
     user = find_user_by params[:login]
     return unless user && user_auth?(user, params[:password])
-    head :accepted
-    # TODO: Method call to get server config from config file
-    # Send config to client <---
+    response.status = :accepted
+    render json: Profile.config_for(:main)
   end
 
   def create
