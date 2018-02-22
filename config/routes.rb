@@ -10,4 +10,11 @@ Rails.application.routes.draw do
   match '/create' => 'login#create', via: :post
   match '/delete' => 'login#delete', via: :post
   match '/reset_password' => 'login#reset_password', via: :post
+
+  match '/console/start_main' => 'console#start_main', via: :post
+  match '/console/stop_main' => 'console#stop_main', via: :post
+  match'/console/start_gateway' => 'console#start_gateway', via: :post
+  match '/console/stop_gateway' => 'console#stop_gateway', via: :post
+
+
 end
