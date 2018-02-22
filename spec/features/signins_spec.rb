@@ -6,5 +6,5 @@ RSpec.feature 'Signins', type: :feature do
     @admin = Fabricate :admin
   end
 
-  it 'signs me in'
+  it 'logs in admin console'
 end
