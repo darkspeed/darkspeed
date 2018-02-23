@@ -1,1 +1,1 @@
-{"server":null,"server_port":"8008","local_address":"0.0.0.0","local_port":"8080","password":"secret","method":"aes-256-ctr","timeout":600,"fast_open":false}
+{"server":null,"server_port":"8008","local_address":"0.0.0.0","local_port":"8080","password":"secretpass","method":"aes-256-ctr","timeout":600,"fast_open":false}
