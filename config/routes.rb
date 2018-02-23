@@ -16,5 +16,4 @@ Rails.application.routes.draw do
   match'/console/start_gateway' => 'console#start_gateway', via: :post
   match '/console/stop_gateway' => 'console#stop_gateway', via: :post
 
-
 end

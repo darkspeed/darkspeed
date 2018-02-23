@@ -28,3 +28,6 @@ test:
 production:
   <<: *default
   database: darkspeed
+  host: localhost
+  username: darkspeed
+  password: <%= ENV["DARKSPEED_DB_PASS"] %>
