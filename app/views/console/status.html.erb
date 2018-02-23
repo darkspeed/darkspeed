@@ -8,5 +8,5 @@
 <p>
 Gateway status: <%= Darksocks::Server.running? :gateway %>
 <%= button_to "Start the gateway server", "/console/start_gateway", method: :post %>
-<%= button_to "Stop the gateway server", "/console.stop_gateway", method: :post %>
+<%= button_to "Stop the gateway server", "/console/stop_gateway", method: :post %>
 </p>
