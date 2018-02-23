@@ -26,7 +26,8 @@ module Darksocks
       return nil unless running? profile
       pid = read_pid(profile)
       raise if pid.zero?
-      Process.kill('SIGINT', pid + 1)
+      Process.kill('SIGINT', -(Process.getpgid pid)) if Rails.env.production?
+      Process.kill('SIGINT', pid) unless Rails.env.production?
       File.delete path_for profile, 'pid'
     end
 
