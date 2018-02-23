@@ -2,7 +2,6 @@
 class ConsoleController < ApplicationController
   before_action :require_admin
   include Darksocks
-  private
 
   def require_admin
     redirect_to admin_url unless logged_in?
