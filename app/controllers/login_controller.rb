@@ -3,8 +3,7 @@ require 'bcrypt'
 # Manages DarkSpeed user login.
 class LoginController < ApplicationController
   before_action do
-    @data = JSON.parse request.body.read, symbolize_names: true
-    Raven.user_context(id: @data[:username], email: @data[:email])
+    Raven.user_context(id: params[:username], email: params[:email])
   end
 
   # Find a user by a given login.
@@ -12,8 +11,8 @@ class LoginController < ApplicationController
   # @return [User?] The user, nil if not found.
   # @note When a user is not found, a status of 404 is set.
   def find_user_by(login)
-    user = User.find_by(username: login)
-    user ||= User.find_by(email: login)
+    user = User.find_by_username login
+    user ||= User.find_by_email login
     head :not_found unless user
     user
   end
@@ -28,21 +27,14 @@ class LoginController < ApplicationController
 
   def login
     # Find and authenticatethe user
-    user = find_user_by @data[:login]
-    return unless user && user_auth?(user, @data[:password])
-    head :accepted
-    # TODO: Method call to get server config from config file
-    # Send config to client <---
+    user = find_user_by params[:login]
+    return unless user && user_auth?(user, params[:password])
+    response.status = :accepted
+    render json: Profile.config_for(:main)
   end
 
   def create
-    # Create the new user
-
-    new_user = User.new username: @data[:username],
-                        email: @data[:email],
-                        password: @data[:password],
-                        password_confirmation: @data[:password_confirmation]
-
+    new_user = create_user
     # Save the user to the database
     unless new_user.save
       response.status = :bad_request
@@ -54,8 +46,8 @@ class LoginController < ApplicationController
   end
 
   def delete
-    user = find_user_by @data[:login]
-    return unless user && user_auth?(user, @data[:password])
+    user = find_user_by params[:login]
+    return unless user && user_auth?(user, params[:password])
     unless user.destroy
       head :internal_server_error
       return
@@ -65,4 +57,13 @@ class LoginController < ApplicationController
 
   # TODO: Refactor, SendGrid, and spec.
   def reset_password; end
+
+  private
+
+  def create_user
+    User.new username: params[:username],
+             email: params[:email],
+             password: params[:password],
+             password_confirmation: params[:password_confirmation]
+  end
 end
