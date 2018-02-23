@@ -4,3 +4,4 @@ log/*
 public/coverage/*
 docs/*
 .yardoc/*
+*.pid
