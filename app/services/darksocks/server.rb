@@ -44,7 +44,7 @@ module Darksocks
       profile = Profile.config_for(profile)
       options = Profile.config_for(:global)
       JSON(
-        server: profile[:host], server_port: profile[:port].to_s,
+        server: options[:host], server_port: profile[:port].to_s,
         local_address: '0.0.0.0', local_port: '8080',
         password: profile[:password], method: options[:cipher],
         timeout: options[:timeout], fast_open: false
