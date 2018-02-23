@@ -1,5 +1,4 @@
 
-<% require_relative 'status_helper.rb' %>
 <h1>DarkSpeed Admin Console</h1>
 <p>Main server status: <%= Darksocks::Server.running? :main %>
 <%= button_to "Start the Main server", "/console/start_main", method: :post%>
