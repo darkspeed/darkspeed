@@ -15,7 +15,7 @@ module Darksocks
       opts = Profile.global :opts
       # Spawn process
       command = %(#{exec} -c #{path} --plugin #{plugin} --plugin-opts "#{opts}")
-      pid = startup add_log command, profile
+      pid = startup command
       store_pid pid, profile
       pid
     end
@@ -26,8 +26,7 @@ module Darksocks
       return nil unless running? profile
       pid = read_pid(profile)
       raise if pid.zero?
-      Process.kill('SIGINT', -(Process.getpgid pid)) if Rails.env.production?
-      Process.kill('SIGINT', pid) unless Rails.env.production?
+      Process.kill('SIGINT', pid)
       File.delete path_for profile, 'pid'
     end
 
@@ -76,11 +75,6 @@ module Darksocks
       pid = Process.spawn command
       Process.detach pid
       pid
-    end
-
-    def self.add_log(command, profile)
-      log = Rails.root.join "log/darksocks_#{profile}.log"
-      command.concat " >> #{log}"
     end
 
     def self.path_for(symbol, ext = 'json')
