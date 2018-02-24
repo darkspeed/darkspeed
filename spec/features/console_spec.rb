@@ -19,4 +19,18 @@ RSpec.feature 'console', type: :feature do
       expect(page).to have_content content
     end
   end
+
+  describe 'process management' do
+    before :all do
+      `rake pid:reset`
+    end
+
+    it 'starts the server'
+
+    it 'stops the server'
+
+    after :all do
+      `rake pid:reset`
+    end
+  end
 end
