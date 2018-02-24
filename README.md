@@ -1,6 +1,6 @@
 # DarkSpeed Server
 
-[![Build Status](https://travis-ci.com/aaronjsutton/DarkSpeed-Server.svg?token=yit2MGjwURDQTA7d5cCk&branch=rewrite)](https://travis-ci.com/aaronjsutton/DarkSpeed-Server)
+[![Build Status](https://travis-ci.com/aaronjsutton/DarkSpeed-Server.svg?token=yit2MGjwURDQTA7d5cCk&branch=master)](https://travis-ci.com/aaronjsutton/DarkSpeed-Server)
 
 ## Error Reporting
 
