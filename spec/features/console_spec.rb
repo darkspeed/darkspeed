@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'console', type: :feature do
   before :each do
+    DrWho.unique.clear
     @password = Faker::Internet.password
     @admin = Fabricate :admin, password: @password
   end
@@ -18,9 +19,5 @@ RSpec.feature 'console', type: :feature do
       click_button 'Open Console'
       expect(page).to have_content content
     end
-  end
-
-  after :all do
-    DrWho.unique.clear
   end
 end

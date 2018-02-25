@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Processes', type: :feature do
   describe 'management' do
     before :all do
+      DrWho.unique.clear
       @password = Faker::Internet.password
       @admin = Fabricate :admin, password: @password
       ENV["DARKSPEED_HOST"] = 'darkspeed.test'
@@ -28,10 +29,6 @@ RSpec.feature 'Processes', type: :feature do
         click_button "Stop the #{profile} server"
         expect(page).to have_content 'Console'
       end
-    end
-
-    after :all do
-      DrWho.unique.clear
     end
   end
 end

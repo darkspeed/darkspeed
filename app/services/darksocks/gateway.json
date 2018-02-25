@@ -1,1 +1,1 @@
-{"server":"127.0.0.1","server_port":"5456","local_address":"0.0.0.0","local_port":"8080","password":"gateway","method":"aes-256-ctr","timeout":600,"fast_open":false}
+{"server":null,"server_port":"5456","local_address":"0.0.0.0","local_port":"8080","password":"gateway","method":"aes-256-ctr","timeout":600,"fast_open":false}
