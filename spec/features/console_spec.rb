@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.feature 'console', type: :feature do
   before :each do
-    @password = Faker::Internet.password
-    @admin = Fabricate :admin, password: @password
+    @password = 'password'
+    @admin = Admin.new username: 'admin', password: @password
+    @admin.save
   end
 
   it 'logs in admin console' do

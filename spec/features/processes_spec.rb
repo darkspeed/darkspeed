@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.feature 'Processes', type: :feature do
   describe 'management' do
     before :all do
-      @password = Faker::Internet.password
-      @admin = Fabricate :admin, password: @password
+      @password = 'password'
+      @admin = Admin.new username: 'admin', password: @password
+      @admin.save
       ENV["DARKSPEED_HOST"] = 'darkspeed.test'
       ENV["DARKSPEED_PASSWORD"] = Faker::Internet.password
     end
