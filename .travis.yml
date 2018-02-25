@@ -46,7 +46,7 @@ notifications:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: bin/reports
+    script: bin/deploy
     on:
       branch:
-        - rewrite
+        - master
