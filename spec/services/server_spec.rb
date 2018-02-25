@@ -23,11 +23,4 @@ RSpec.describe Darksocks::Server do
    Darksocks::Server.write @json, @symbol
    expect(File.new(Rails.root.join "app/services/darksocks/#{@symbol}.json").read).to eq @json
  end
-
- it 'stops/starts' do
-   Darksocks::Server.start @symbol
-   expect(Darksocks::Server.running? @symbol).to be true
-   Darksocks::Server.shutdown @symbol
-   expect(Darksocks::Server.running? @symbol).to be false
- end
 end

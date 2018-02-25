@@ -15,9 +15,7 @@ module Darksocks
       opts = Profile.global :opts
       # Spawn process
       command = %(#{exec} -c #{path} --plugin #{plugin} --plugin-opts "#{opts}")
-      pid = startup command
-      store_pid pid, profile
-      pid
+      startup command, profile
     end
 
     # Shutdown DarkSocks server
@@ -27,7 +25,8 @@ module Darksocks
       pid = read_pid(profile)
       raise if pid.zero?
       Process.kill('SIGINT', pid)
-      File.delete path_for profile, 'pid'
+      path = pid_path profile
+      File.delete path if File.exist? path
     end
 
     # Status of a profile
@@ -54,15 +53,13 @@ module Darksocks
     private_class_method
 
     def self.read_pid(profile)
-      path = path_for(profile, 'pid')
+      path = pid_path profile
       return nil unless File.exist? path
       File.new(path).read.to_i
     end
 
-    def self.store_pid(pid, profile)
-      pidfile = File.new(path_for(profile, 'pid'), 'w')
-      pidfile.write pid
-      pidfile.close
+    def self.pid_path(profile)
+      Rails.root.join "tmp/#{profile}.pid"
     end
 
     def self.write(config, symbol)
@@ -71,10 +68,11 @@ module Darksocks
       file.close
     end
 
-    def self.startup(command)
-      pid = Process.spawn command
-      Process.detach pid
-      pid
+    def self.startup(command, profile)
+      pid_flag = " -f #{pid_path profile}"
+      fork do
+        exec command.concat pid_flag
+      end
     end
 
     def self.path_for(symbol, ext = 'json')

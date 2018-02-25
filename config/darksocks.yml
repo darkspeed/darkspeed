@@ -6,7 +6,7 @@ global:
   host: <%= ENV["DARKSPEED_HOSTNAME"] %>
   timeout: 600
   plugin: obfs-server
-  obfs: obfs=http
+  opts: obfs=http
 
 # Server used to create temporary connections while authenticating
 gateway:

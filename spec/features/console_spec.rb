@@ -19,4 +19,8 @@ RSpec.feature 'console', type: :feature do
       expect(page).to have_content content
     end
   end
+
+  after :all do
+    DrWho.unique.clear
+  end
 end
