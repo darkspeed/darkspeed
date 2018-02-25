@@ -1,4 +1,4 @@
-
+<%= stylesheet_link_tag "console" %>
 <h1>DarkSpeed Admin Console</h1>
 <p>Main server status: <%= Darksocks::Server.running? :main %>
 <%= button_to "Start the main server", "/console/start_main", method: :post%>
