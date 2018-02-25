@@ -1,5 +1,6 @@
 include Faker
 Fabricator(:admin) do
-  username        Internet.user_name DrWho.unique.character
+  name = Fallout.unique.character
+  username        Internet.user_name name
   password_digest Internet.password
 end
