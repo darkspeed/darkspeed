@@ -7,3 +7,9 @@ rsync -qrz --delete-after docs/ darkspeed@aaronjsutton.com:$ROOT/
 rsync -qrz --delete-after /tmp/security.html darkspeed@aaronjsutton.com:$ROOT/report/
 rsync -qrz --delete-after /tmp/rubocop.html darkspeed@aaronjsutton.com:$ROOT/report/
 rsync -qrz --delete-after public/coverage darkspeed@aaronjsutton.com:$ROOT/report/
+
+ssh $HOST "git pull"
+ssh $HOST "rvm use"
+ssh $HOST "bundle install --deployment --without development test"
+ssh $HOST "bundle exec rake assets:precompile db:migrate RAILS_ENV=production"
+ssh $HOST "passenger-config restart-app $(pwd)"
