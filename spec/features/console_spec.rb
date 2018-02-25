@@ -20,17 +20,7 @@ RSpec.feature 'console', type: :feature do
     end
   end
 
-  describe 'process management' do
-    before :all do
-      `rake pid:reset`
-    end
-
-    it 'starts the server'
-
-    it 'stops the server'
-
-    after :all do
-      `rake pid:reset`
-    end
+  after :all do
+    DrWho.unique.clear
   end
 end
