@@ -72,9 +72,11 @@ module Darksocks
     end
 
     def self.startup(command)
-      pid = Process.spawn command
-      Process.detach pid
-      pid
+      puts "COMMAND #{command}"
+      fpid = fork do
+        exec command
+      end
+      fpid
     end
 
     def self.path_for(symbol, ext = 'json')
