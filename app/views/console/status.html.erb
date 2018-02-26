@@ -1,7 +1,8 @@
 <%= stylesheet_link_tag "console" %>
 <%= image_tag("logo.png") %>
 
-<p>Main server status: <%=  Darksocks::Server.running? :main %>
+<p>
+<b>Main server status: <%=  Darksocks::Server.status? :main %></b>
 <div style="float:left;"><%= button_to "Start the main server", "/console/start_main", method: :post, class: "button1" %></div>
 <div style="float:left;"><%= button_to "Stop the main server", "/console/stop_main", method: :post, class: "button2" %></div>
 </p>
@@ -11,7 +12,7 @@
 
 <div>
 <p>
-Gateway status: <%= Darksocks::Server.running? :gateway %>
+<b>Gateway status: <%= Darksocks::Server.status? :gateway %></b>
 <div style="float:left;"><%= button_to "Start the gateway server", "/console/start_gateway", method: :post, class: "button1" %></div>
 <div style="float:left;"><%= button_to "Stop the gateway server", "/console/stop_gateway", method: :post, class: "button2" %></div>
 <div style="clear:both;">
