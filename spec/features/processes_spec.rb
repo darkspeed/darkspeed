@@ -19,14 +19,14 @@ RSpec.feature 'Processes', type: :feature do
     it 'starts the servers' do
       ['gateway', 'main'].each do |profile|
         click_button "Start the #{profile} server"
-        expect(page).to have_content 'Console'
+        expect(page).to have_content 'Main server'
       end
     end
 
     it 'stops the servers' do
       ['gateway', 'main'].each do |profile|
         click_button "Stop the #{profile} server"
-        expect(page).to have_content 'Console'
+        expect(page).to have_content 'Main server'
       end
     end
 
