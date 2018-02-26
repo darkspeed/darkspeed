@@ -1,14 +1,7 @@
 <%= stylesheet_link_tag "console" %>
 <%= image_tag("logo.png") %>
-<div>
-<%
-if Darksocks::Server.running? :main == true
-  @main_status = "online"
-else
-  @main_status= "offline"
-end
-%>
-<p>Main server status: <%= @main_status %>
+
+<p>Main server status: <%=  Darksocks::Server.running? :main %>
 <div style="float:left;"><%= button_to "Start the main server", "/console/start_main", method: :post, class: "button1" %></div>
 <div style="float:left;"><%= button_to "Stop the main server", "/console/stop_main", method: :post, class: "button2" %></div>
 </p>
