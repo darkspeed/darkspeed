@@ -7,3 +7,5 @@ rsync -qrz --delete-after docs/ darkspeed@aaronjsutton.com:$ROOT/
 rsync -qrz --delete-after /tmp/security.html darkspeed@aaronjsutton.com:$ROOT/report/
 rsync -qrz --delete-after /tmp/rubocop.html darkspeed@aaronjsutton.com:$ROOT/report/
 rsync -qrz --delete-after public/coverage darkspeed@aaronjsutton.com:$ROOT/report/
+
+ssh $HOST "/var/www/darkspeed/code/bin/production_update"
