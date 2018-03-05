@@ -36,6 +36,11 @@ module Darksocks
       false
     end
 
+    def self.status?(profile)
+      return "online" if running? profile
+      "offline"
+    end
+
     # Generate a JSON configuration
     # @param profile [Symbol] The profile to use. Ex: main or gateway.
     # @return The JSON data created.
