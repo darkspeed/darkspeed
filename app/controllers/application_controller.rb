@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_raven_context
 
   helper_method :current_user, :logged_in?
+  include Darksocks
 
   def current_user
     @current_user ||= Admin.find(session[:user_id]) if session[:user_id]

@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   match'/console/start_gateway' => 'console#start_gateway', via: :post
   match '/console/stop_gateway' => 'console#stop_gateway', via: :post
 
+  match '/bot/get_gateway_status' => 'bot#get_gateway_status', via: :get
+  match '/bot/get_main_status' => 'bot#get_main_status', via: :get
 end
