@@ -9,7 +9,7 @@ RSpec.feature 'console', type: :feature do
 
   it 'logs in admin console' do
     results = {
-      @password => 'DarkSpeed Admin Console',
+      @password => 'Main server',
       'fake' => 'DarkSpeed Administrator'
     }
     results.each do |password, content|
