@@ -41,9 +41,9 @@ class LoginController < ApplicationController
       render json: new_user.errors.as_json
       return
     end
-
-    head :created
+    render plain: "Success"
   end
+
 
   def delete
     user = find_user_by params[:login]
