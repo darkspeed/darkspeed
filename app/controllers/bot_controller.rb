@@ -1,16 +1,10 @@
 class BotController < ApplicationController
   def get_main_status
-    unless Darksocks::Server.status? :main
-      render plain: "online"
-    else
-      render plain: "offline"
-    end
+    status = Darksocks::Server.status? :main
+    render plain: status
   end
   def get_gateway_status
-    unless Darksocks::Server.status? :gateway
-      render plain: "online"
-    else
-      render plain: "offline"
-    end
+    status = Darksocks::Server.status? :gateway
+    render plain: status
   end
 end
