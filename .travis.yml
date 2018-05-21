@@ -37,8 +37,8 @@ before_script:
 script:
   - brakeman -f html -o /tmp/security.html
   - rubocop -f html -o /tmp/rubocop.html --fail-level E
-  - bundle exec rake spec
-
+    # - bundle exec rake spec
+    
 notifications:
   email:
   - ajsutton.dev@gmail.com
